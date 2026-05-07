@@ -893,7 +893,14 @@ function buildCard(s, idx) {
                    s.grade_color === 'watch' ? 'var(--watch)' : 'var(--cold)';
 
   const etfTags = (s.etf_details && s.etf_details.length > 0 
-    ? s.etf_details.map(e => `<span class="etf-tag" title="${e.change_pct > 0 ? '+' : ''}${e.change_pct}%">${e.ticker}</span>`).join('')
+    ? s.etf_details.map(e => {
+        const sign = e.change_pct > 0 ? '+' : '';
+        const color = e.change_pct > 0 ? 'var(--buy)' : e.change_pct < 0 ? 'var(--accent-red)' : 'var(--neutral)';
+        return `<span class="etf-tag" style="border-color:${color}22;background:${color}11">
+          <span style="color:var(--text-secondary)">${e.ticker}</span>
+          <span style="color:${color};font-weight:600;margin-left:4px">${sign}${e.change_pct.toFixed(2)}%</span>
+        </span>`;
+      }).join('')
     : s.etfs ? s.etfs.map(t => `<span class="etf-tag">${t}</span>`).join('') : ''
   );
 
