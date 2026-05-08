@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- 배경 (흰색 원형) -->
+  <circle cx="50" cy="50" r="50" fill="white"/>
+
+  <!-- ── 태극 원 ── -->
+  <!-- 적색 배경 원 -->
+  <circle cx="50" cy="50" r="26" fill="#CD2E3A"/>
+
+  <!-- 청색 반원 (위) -->
+  <path d="M24,50 A26,26,0,0,1,76,50 A13,13,0,0,1,50,50 A13,13,0,0,0,24,50 Z" fill="#003478"/>
+
+  <!-- 소원: 위쪽 적색→청 / 아래 청→적 -->
+  <circle cx="50" cy="37" r="13" fill="#003478"/>
+  <circle cx="50" cy="63" r="13" fill="#CD2E3A"/>
+  <circle cx="50" cy="37" r="6.5" fill="#CD2E3A"/>
+  <circle cx="50" cy="63" r="6.5" fill="#003478"/>
+
+  <!-- ── 건괘 (왼쪽 상단) 3획 ── -->
+  <rect x="5"  y="14" width="18" height="3.5" rx="1" fill="#1a1a1a"/>
+  <rect x="5"  y="20" width="18" height="3.5" rx="1" fill="#1a1a1a"/>
+  <rect x="5"  y="26" width="18" height="3.5" rx="1" fill="#1a1a1a"/>
+
+  <!-- ── 이괘 (오른쪽 상단) 끊긴획 ── -->
+  <rect x="77" y="14" width="7"  height="3.5" rx="1" fill="#1a1a1a"/>
+  <rect x="86" y="14" width="7"  height="3.5" rx="1" fill="#1a1a1a"/>
+  <rect x="77" y="20" width="16" height="3.5" rx="1" fill="#1a1a1a"/>
+  <rect x="77" y="26" width="7"  height="3.5" rx="1" fill="#1a1a1a"/>
+  <rect x="86" y="26" width="7"  height="3.5" rx="1" fill="#1a1a1a"/>
+
+  <!-- ── 감괘 (왼쪽 하단) ── -->
+  <rect x="5"  y="71" width="18" height="3.5" rx="1" fill="#1a1a1a"/>
+  <rect x="5"  y="77" width="7"  height="3.5" rx="1" fill="#1a1a1a"/>
+  <rect x="14" y="77" width="9"  height="3.5" rx="1" fill="#1a1a1a"/>
+  <rect x="5"  y="83" width="18" height="3.5" rx="1" fill="#1a1a1a"/>
+
+  <!-- ── 곤괘 (오른쪽 하단) ── -->
+  <rect x="77" y="71" width="7"  height="3.5" rx="1" fill="#1a1a1a"/>
+  <rect x="86" y="71" width="7"  height="3.5" rx="1" fill="#1a1a1a"/>
+  <rect x="77" y="77" width="7"  height="3.5" rx="1" fill="#1a1a1a"/>
+  <rect x="86" y="77" width="7"  height="3.5" rx="1" fill="#1a1a1a"/>
+  <rect x="77" y="83" width="7"  height="3.5" rx="1" fill="#1a1a1a"/>
+  <rect x="86" y="83" width="7"  height="3.5" rx="1" fill="#1a1a1a"/>
+</svg>

@@ -3,982 +3,801 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🌐 미국→한국 섹터 분석 | US-KR Sector Compass</title>
-  <meta name="description" content="미국 ETF 기반 섹터 점수로 한국 주도주를 자동 매핑하는 분석 대시보드">
+  <title>🇰🇷 미국→한국 섹터 분석 v2 | US-KR Sector Compass</title>
+  <meta name="description" content="ETF·SOX·DXY·금리·중국·VIX 복합 점수 기반 한국 주도주 자동 매핑">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Gmarket+Sans:wght@300;500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  
   <style>
-    /* ─── CSS Variables ─── */
+    /* ═══════════════════════════════════════════
+       VARIABLES
+    ═══════════════════════════════════════════ */
     :root {
-      --bg-base: #080b14;
-      --bg-surface: #0d1220;
-      --bg-card: #111827;
-      --bg-card-hover: #161f34;
-      --border: rgba(99, 179, 237, 0.12);
-      --border-bright: rgba(99, 179, 237, 0.3);
-      --text-primary: #e8f0ff;
-      --text-secondary: #8ba4c8;
-      --text-muted: #4a6080;
-      --accent-blue: #63b3ed;
-      --accent-cyan: #4fd1c5;
-      --accent-gold: #f6c90e;
-      --accent-red: #fc5c65;
-      --accent-green: #26de81;
-      --accent-purple: #a855f7;
-      --hot: #ff6b35;
-      --buy: #26de81;
-      --neutral: #63b3ed;
-      --watch: #ffd32a;
-      --cold: #4a6080;
-      --glow-blue: 0 0 30px rgba(99, 179, 237, 0.15);
-      --glow-gold: 0 0 40px rgba(246, 201, 14, 0.2);
-      --radius: 16px;
-      --radius-sm: 10px;
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --bg:      #07090f;
+      --bg2:     #0c1120;
+      --card:    #0f1524;
+      --card2:   #131c2e;
+      --border:  rgba(99,179,237,.09);
+      --borderB: rgba(99,179,237,.26);
+      --t1: #e8f0ff; --t2: #8ba4c8; --t3: #3e5270;
+      --blue:   #63b3ed; --cyan: #4fd1c5;
+      --gold:   #f6c90e; --red:  #fc5c65;
+      --green:  #26de81; --purple:#a855f7;
+      --hot: #ff6b35; --buy: #26de81;
+      --neut: #63b3ed; --watch: #ffd32a; --cold: #4a6080;
+      --tr: all .28s cubic-bezier(.4,0,.2,1);
+      --r: 14px; --rs: 8px;
     }
-
     [data-theme="light"] {
-      --bg-base: #f0f4ff;
-      --bg-surface: #ffffff;
-      --bg-card: #ffffff;
-      --bg-card-hover: #f8faff;
-      --border: rgba(60, 100, 200, 0.12);
-      --border-bright: rgba(60, 100, 200, 0.25);
-      --text-primary: #0f172a;
-      --text-secondary: #3a5a8a;
-      --text-muted: #94a3b8;
-      --accent-blue: #2563eb;
-      --accent-cyan: #0891b2;
-      --glow-blue: 0 4px 20px rgba(37, 99, 235, 0.1);
+      --bg:#eef2fb; --bg2:#f8faff; --card:#fff; --card2:#f2f6ff;
+      --border:rgba(50,90,200,.09); --borderB:rgba(50,90,200,.22);
+      --t1:#0f172a; --t2:#3a5a8a; --t3:#94a3b8;
+      --blue:#2563eb; --cyan:#0891b2;
     }
 
-    /* ─── Reset & Base ─── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Noto Sans KR', sans-serif;
-      background: var(--bg-base);
-      color: var(--text-primary);
-      min-height: 100vh;
-      overflow-x: hidden;
-      line-height: 1.6;
+    /* ═══════════════════════════════════════════
+       BASE
+    ═══════════════════════════════════════════ */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Noto Sans KR',sans-serif;
+      background:var(--bg); color:var(--t1);
+      min-height:100vh; overflow-x:hidden; line-height:1.6;
     }
-
-    /* ─── Background Effects ─── */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+    body::before{
+      content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
       background:
-        radial-gradient(ellipse 60% 40% at 15% 15%, rgba(99,179,237,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 40% at 85% 80%, rgba(168,85,247,0.05) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 30% at 50% 50%, rgba(246,201,14,0.02) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* ─── Header ─── */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(8,11,20,0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-    }
-
-    [data-theme="light"] header {
-      background: rgba(240,244,255,0.85);
-    }
-
-    .header-inner {
-      max-width: 1400px;
-      margin: 0 auto;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .logo {
-      font-family: 'Gmarket Sans', sans-serif;
-      font-weight: 700;
-      font-size: 18px;
-      background: linear-gradient(135deg, #63b3ed, #a78bfa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      flex-shrink: 0;
-    }
-
-    .logo span {
-      font-size: 11px;
-      background: none;
-      -webkit-text-fill-color: var(--text-muted);
-      font-weight: 300;
-      margin-left: 4px;
-    }
-
-    .header-right {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .update-badge {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      color: var(--text-muted);
-      background: rgba(99,179,237,0.06);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 4px 10px;
-    }
-
-    .update-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent-green);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.8); }
-    }
-
-    .btn-theme {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      padding: 6px 10px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: var(--transition);
-    }
-
-    .btn-theme:hover {
-      border-color: var(--accent-blue);
-      color: var(--accent-blue);
-    }
-
-    /* ─── Main Layout ─── */
-    main {
-      position: relative;
-      z-index: 1;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 32px 20px 60px;
-    }
-
-    /* ─── Hero Section ─── */
-    .hero {
-      text-align: center;
-      margin-bottom: 40px;
-      padding: 40px 20px 32px;
-    }
-
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent-cyan);
-      background: rgba(79,209,197,0.08);
-      border: 1px solid rgba(79,209,197,0.2);
-      border-radius: 20px;
-      padding: 4px 12px;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-family: 'Gmarket Sans', sans-serif;
-      font-size: clamp(28px, 5vw, 48px);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 12px;
-      background: linear-gradient(135deg, #e8f0ff 0%, #63b3ed 50%, #a78bfa 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero p {
-      font-size: 15px;
-      color: var(--text-secondary);
-      max-width: 520px;
-      margin: 0 auto;
-    }
-
-    /* ─── TOP Sector Banner ─── */
-    .top-banner {
-      background: linear-gradient(135deg, rgba(246,201,14,0.08) 0%, rgba(255,107,53,0.06) 100%);
-      border: 1px solid rgba(246,201,14,0.25);
-      border-radius: var(--radius);
-      padding: 20px 28px;
-      margin-bottom: 28px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      box-shadow: var(--glow-gold);
-      animation: bannerGlow 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes bannerGlow {
-      from { box-shadow: 0 0 20px rgba(246,201,14,0.1); }
-      to { box-shadow: 0 0 40px rgba(246,201,14,0.25); }
-    }
-
-    .top-banner-icon {
-      font-size: 36px;
-      flex-shrink: 0;
-    }
-
-    .top-banner-content { flex: 1; }
-
-    .top-banner-label {
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent-gold);
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .top-banner-name {
-      font-family: 'Gmarket Sans', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .top-banner-desc {
-      font-size: 13px;
-      color: var(--text-secondary);
-      margin-top: 2px;
-    }
-
-    .top-banner-score {
-      text-align: right;
-      flex-shrink: 0;
-    }
-
-    .score-big {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 28px;
-      font-weight: 600;
-      color: var(--accent-gold);
-    }
-
-    .score-label {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    /* ─── Filter Bar ─── */
-    .filter-bar {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
-
-    .filter-label {
-      font-size: 12px;
-      color: var(--text-muted);
-      flex-shrink: 0;
-    }
-
-    .filter-btn {
-      padding: 6px 14px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      background: var(--bg-card);
-      color: var(--text-secondary);
-      font-size: 12px;
-      cursor: pointer;
-      transition: var(--transition);
-      font-family: 'Noto Sans KR', sans-serif;
-    }
-
-    .filter-btn:hover, .filter-btn.active {
-      border-color: var(--accent-blue);
-      background: rgba(99,179,237,0.08);
-      color: var(--accent-blue);
-    }
-
-    /* ─── Sector Grid ─── */
-    .sectors-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 16px;
-    }
-
-    /* ─── Sector Card ─── */
-    .sector-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: var(--transition);
-      cursor: pointer;
-      position: relative;
-    }
-
-    .sector-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--card-accent, var(--accent-blue));
-      opacity: 0;
-      transition: var(--transition);
-    }
-
-    .sector-card:hover {
-      border-color: var(--border-bright);
-      background: var(--bg-card-hover);
-      transform: translateY(-2px);
-      box-shadow: var(--glow-blue);
-    }
-
-    .sector-card:hover::before {
-      opacity: 1;
-    }
-
-    .sector-card.is-top {
-      border-color: rgba(246,201,14,0.3);
-      box-shadow: 0 0 30px rgba(246,201,14,0.1);
-    }
-
-    .sector-card.is-top::before {
-      background: linear-gradient(90deg, var(--accent-gold), var(--hot));
-      opacity: 1;
-    }
-
-    /* Card Header */
-    .card-header {
-      padding: 20px 20px 16px;
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      user-select: none;
-    }
-
-    .card-icon-wrap {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      flex-shrink: 0;
-    }
-
-    .card-meta { flex: 1; min-width: 0; }
-
-    .card-rank {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      color: var(--text-muted);
-      letter-spacing: 0.05em;
-    }
-
-    .card-name {
-      font-family: 'Gmarket Sans', sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text-primary);
-      line-height: 1.3;
-      margin: 2px 0 4px;
-    }
-
-    .card-name-en {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .card-right {
-      text-align: right;
-      flex-shrink: 0;
-    }
-
-    .card-score {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 22px;
-      font-weight: 600;
-      line-height: 1;
-    }
-
-    .card-score.positive { color: var(--accent-green); }
-    .card-score.negative { color: var(--accent-red); }
-    .card-score.neutral { color: var(--neutral); }
-
-    .card-grade {
-      font-size: 11px;
-      margin-top: 4px;
-      font-weight: 500;
-    }
-
-    .grade-hot { color: var(--hot); }
-    .grade-buy { color: var(--buy); }
-    .grade-neutral { color: var(--neutral); }
-    .grade-watch { color: var(--watch); }
-    .grade-cold { color: var(--cold); }
-
-    /* Score Bar */
-    .score-bar-wrap {
-      padding: 0 20px 16px;
-    }
-
-    .score-bar-track {
-      height: 4px;
-      background: rgba(255,255,255,0.05);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .score-bar-fill {
-      height: 100%;
-      border-radius: 4px;
-      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* ETF Tags */
-    .etf-tags {
-      display: flex;
-      gap: 6px;
-      padding: 0 20px 16px;
-      flex-wrap: wrap;
-    }
-
-    .etf-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      padding: 3px 8px;
-      border-radius: 5px;
-      background: rgba(99,179,237,0.07);
-      border: 1px solid rgba(99,179,237,0.15);
-      color: var(--accent-blue);
-    }
-
-    /* News Snippet */
-    .card-news {
-      margin: 0 20px 16px;
-      padding: 10px 12px;
-      background: rgba(255,255,255,0.02);
-      border-left: 2px solid var(--border-bright);
-      border-radius: 0 6px 6px 0;
-      font-size: 12px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* Toggle Button */
-    .card-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 10px 20px;
-      border-top: 1px solid var(--border);
-      font-size: 12px;
-      color: var(--text-muted);
-      transition: var(--transition);
-    }
-
-    .card-toggle .arrow {
-      transition: transform 0.3s ease;
-      font-size: 10px;
-    }
-
-    .sector-card.expanded .card-toggle .arrow {
-      transform: rotate(180deg);
-    }
-
-    .sector-card:hover .card-toggle {
-      color: var(--accent-blue);
-      background: rgba(99,179,237,0.04);
-    }
-
-    /* Stock List (expanded) */
-    .stock-list {
-      display: none;
-      border-top: 1px solid var(--border);
-      padding: 8px 0;
-    }
-
-    .sector-card.expanded .stock-list {
-      display: block;
-      animation: slideDown 0.3s ease;
-    }
-
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .stock-item {
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-      gap: 12px;
-      transition: var(--transition);
-      cursor: default;
-    }
-
-    .stock-item:hover {
-      background: rgba(255,255,255,0.02);
-    }
-
-    .stock-num {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      color: var(--text-muted);
-      width: 18px;
-      flex-shrink: 0;
-    }
-
-    .stock-info { flex: 1; min-width: 0; }
-
-    .stock-name {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-primary);
-    }
-
-    .stock-ticker {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      color: var(--text-muted);
-    }
-
-    .stock-reason {
-      font-size: 11px;
-      color: var(--text-secondary);
-      text-align: right;
-      max-width: 140px;
-      line-height: 1.4;
-    }
-
-    /* ─── Stats Row ─── */
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-
-    .stat-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 16px 18px;
-    }
-
-    .stat-label {
-      font-size: 11px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 6px;
-    }
-
-    .stat-value {
-      font-family: 'Gmarket Sans', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .stat-sub {
-      font-size: 11px;
-      color: var(--text-secondary);
-      margin-top: 2px;
-    }
-
-    /* ─── Loading ─── */
-    .loading {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 300px;
-      gap: 16px;
-    }
-
-    .spinner {
-      width: 40px;
-      height: 40px;
-      border: 3px solid var(--border);
-      border-top-color: var(--accent-blue);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    .loading p {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    /* ─── Error ─── */
-    .error-msg {
-      text-align: center;
-      padding: 40px;
-      color: var(--text-muted);
-    }
-
-    .error-msg h2 { font-size: 20px; margin-bottom: 8px; }
-    .error-msg p { font-size: 13px; }
-
-    /* ─── Footer ─── */
-    footer {
-      text-align: center;
-      padding: 32px 20px;
-      border-top: 1px solid var(--border);
-      font-size: 12px;
-      color: var(--text-muted);
-      position: relative;
-      z-index: 1;
-    }
-
-    footer a {
-      color: var(--accent-blue);
-      text-decoration: none;
-    }
-
-    /* ─── Responsive ─── */
-    @media (max-width: 768px) {
-      main { padding: 20px 14px 48px; }
-      .hero { padding: 24px 0 20px; }
-      .hero h1 { font-size: 26px; }
-      .sectors-grid { grid-template-columns: 1fr; gap: 12px; }
-      .top-banner { flex-wrap: wrap; }
-      .top-banner-score { width: 100%; text-align: left; }
-      .header-inner { height: 56px; }
-      .logo span { display: none; }
-      .stats-row { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 480px) {
-      .update-badge { display: none; }
-    }
-
-    /* ─── Scrollbar ─── */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg-base); }
-    ::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 3px; }
-
-    /* ─── Grade color map ─── */
-    .sector-card[data-grade="hot"] { --card-accent: var(--hot); }
-    .sector-card[data-grade="buy"] { --card-accent: var(--buy); }
-    .sector-card[data-grade="neutral"] { --card-accent: var(--neutral); }
-    .sector-card[data-grade="watch"] { --card-accent: var(--watch); }
-    .sector-card[data-grade="cold"] { --card-accent: var(--cold); }
+        radial-gradient(ellipse 55% 35% at 10% 10%,rgba(99,179,237,.055) 0%,transparent 65%),
+        radial-gradient(ellipse 45% 35% at 90% 85%,rgba(168,85,247,.045) 0%,transparent 65%),
+        radial-gradient(ellipse 30% 25% at 50% 50%,rgba(246,201,14,.018) 0%,transparent 70%);
+    }
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:var(--bg)}
+    ::-webkit-scrollbar-thumb{background:var(--borderB);border-radius:3px}
+
+    /* ═══════════════════════════════════════════
+       HEADER
+    ═══════════════════════════════════════════ */
+    header{
+      position:sticky;top:0;z-index:200;
+      background:rgba(7,9,15,.88);
+      backdrop-filter:blur(22px);
+      border-bottom:1px solid var(--border);
+      padding:0 20px;
+    }
+    [data-theme="light"] header{background:rgba(238,242,251,.88)}
+    .hd{
+      max-width:1400px;margin:0 auto;height:60px;
+      display:flex;align-items:center;gap:12px;
+    }
+    .logo{
+      display:flex;align-items:center;gap:8px;
+      font-family:'Gmarket Sans',sans-serif;font-size:16px;font-weight:700;
+      background:linear-gradient(135deg,#63b3ed,#a78bfa);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      background-clip:text;white-space:nowrap;flex-shrink:0;
+    }
+    .logo-flag{
+      width:24px;height:24px;border-radius:50%;overflow:hidden;
+      border:1.5px solid rgba(255,255,255,.13);flex-shrink:0;
+    }
+    .logo-flag svg,.clock-flag svg{width:100%;height:100%}
+    .logo-badge{
+      font-size:9px;padding:1px 5px;border-radius:4px;
+      background:rgba(246,201,14,.15);border:1px solid rgba(246,201,14,.3);
+      color:var(--gold);font-weight:700;letter-spacing:.06em;
+      -webkit-text-fill-color:var(--gold);
+    }
+    .hr{margin-left:auto;display:flex;align-items:center;gap:8px}
+    .data-badge{
+      display:flex;align-items:center;gap:5px;
+      font-family:'JetBrains Mono',monospace;font-size:10px;
+      color:var(--t3);background:rgba(99,179,237,.05);
+      border:1px solid var(--border);border-radius:20px;padding:3px 9px;
+      white-space:nowrap;
+    }
+    .dot-g{width:5px;height:5px;border-radius:50%;background:var(--green);animation:blink 2s infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+    .clock-wrap{
+      display:flex;align-items:center;gap:7px;
+      background:rgba(99,179,237,.04);border:1px solid var(--border);
+      border-radius:10px;padding:4px 10px;
+    }
+    .clock-flag{width:20px;height:20px;border-radius:50%;overflow:hidden;flex-shrink:0}
+    .clock-time{
+      font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;
+      color:var(--t1);display:flex;align-items:center;gap:4px;
+    }
+    .dot-tick{width:4px;height:4px;border-radius:50%;background:var(--green);animation:blink 1s infinite}
+    .clock-date{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--t3)}
+    .btn-theme{
+      background:var(--card);border:1px solid var(--border);
+      color:var(--t2);padding:5px 8px;border-radius:7px;
+      cursor:pointer;font-size:13px;transition:var(--tr);
+    }
+    .btn-theme:hover{border-color:var(--blue);color:var(--blue)}
+
+    /* ═══════════════════════════════════════════
+       MAIN
+    ═══════════════════════════════════════════ */
+    main{
+      position:relative;z-index:1;
+      max-width:1400px;margin:0 auto;
+      padding:28px 16px 60px;
+    }
+
+    /* ═══════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════ */
+    .hero{text-align:center;margin-bottom:32px;padding:32px 16px 24px}
+    .hero-tag{
+      display:inline-flex;align-items:center;gap:6px;
+      font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+      color:var(--cyan);background:rgba(79,209,197,.07);
+      border:1px solid rgba(79,209,197,.2);border-radius:20px;padding:3px 11px;margin-bottom:16px;
+    }
+    .hero h1{
+      font-family:'Gmarket Sans',sans-serif;
+      font-size:clamp(24px,5vw,44px);font-weight:700;line-height:1.2;margin-bottom:10px;
+      background:linear-gradient(135deg,#e8f0ff 0%,#63b3ed 50%,#a78bfa 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    }
+    .hero p{font-size:13px;color:var(--t2);max-width:480px;margin:0 auto}
+
+    /* ═══════════════════════════════════════════
+       MACRO PANEL
+    ═══════════════════════════════════════════ */
+    .macro-panel{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:var(--r);padding:18px 20px;margin-bottom:16px;
+    }
+    .macro-title{
+      font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--t3);margin-bottom:14px;display:flex;align-items:center;gap:7px;
+    }
+    .macro-title::after{content:'';flex:1;height:1px;background:var(--border)}
+    .macro-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+      gap:8px;
+    }
+    .macro-item{
+      background:var(--bg2);border:1px solid var(--border);
+      border-radius:var(--rs);padding:10px 12px;
+      display:flex;flex-direction:column;gap:3px;
+    }
+    .macro-label{font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+    .macro-ticker{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--t3);margin-top:1px}
+    .macro-row{display:flex;align-items:baseline;gap:6px;margin-top:2px}
+    .macro-signal{
+      font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:700;line-height:1;
+    }
+    .macro-day{font-family:'JetBrains Mono',monospace;font-size:10px}
+    .pos{color:var(--green)} .neg{color:var(--red)} .zer{color:var(--neut)}
+    .macro-desc{font-size:9.5px;color:var(--t3);margin-top:2px;line-height:1.4}
+
+    /* ═══════════════════════════════════════════
+       LIVE BAR
+    ═══════════════════════════════════════════ */
+    .live-bar{
+      display:flex;align-items:center;justify-content:space-between;
+      background:rgba(38,222,129,.04);border:1px solid rgba(38,222,129,.14);
+      border-radius:var(--rs);padding:9px 16px;margin-bottom:14px;
+      gap:10px;flex-wrap:wrap;
+    }
+    .live-left{display:flex;align-items:center;gap:8px}
+    .live-lbl{font-size:11px;color:var(--green);font-weight:700;letter-spacing:.06em}
+    .live-desc{font-size:11px;color:var(--t3)}
+    .live-right{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+    .cd-badge{
+      font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--t2);
+      background:rgba(255,255,255,.04);border:1px solid var(--border);
+      border-radius:5px;padding:2px 7px;
+    }
+    .btn-refresh{
+      display:flex;align-items:center;gap:4px;font-size:11px;font-weight:600;
+      background:rgba(38,222,129,.09);border:1px solid rgba(38,222,129,.22);
+      color:var(--green);border-radius:7px;padding:4px 10px;
+      cursor:pointer;transition:var(--tr);font-family:'Noto Sans KR',sans-serif;
+    }
+    .btn-refresh:hover{background:rgba(38,222,129,.16)}
+    .btn-refresh.spinning .ri{animation:spin .6s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .ri{display:inline-block;font-style:normal}
+
+    /* ═══════════════════════════════════════════
+       TOP BANNER
+    ═══════════════════════════════════════════ */
+    .top-banner{
+      display:flex;align-items:center;gap:16px;
+      background:linear-gradient(135deg,rgba(246,201,14,.07),rgba(255,107,53,.05));
+      border:1px solid rgba(246,201,14,.22);border-radius:var(--r);
+      padding:18px 22px;margin-bottom:14px;
+      animation:gpulse 4s ease-in-out infinite alternate;
+    }
+    @keyframes gpulse{
+      from{box-shadow:0 0 14px rgba(246,201,14,.07)}
+      to  {box-shadow:0 0 32px rgba(246,201,14,.2)}
+    }
+    .tb-ico{font-size:32px;flex-shrink:0}
+    .tb-body{flex:1;min-width:0}
+    .tb-lbl{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:2px}
+    .tb-name{font-family:'Gmarket Sans',sans-serif;font-size:20px;font-weight:700}
+    .tb-desc{font-size:12px;color:var(--t2);margin-top:1px}
+    .tb-score{text-align:right;flex-shrink:0}
+    .tb-num{font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:var(--gold);line-height:1}
+    .tb-grade{font-size:11px;color:var(--gold);margin-top:4px}
+    .tb-etf-score{font-size:10px;color:var(--t3);margin-top:2px}
+
+    /* ═══════════════════════════════════════════
+       STATS ROW
+    ═══════════════════════════════════════════ */
+    .stats-row{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:9px;margin-bottom:16px;
+    }
+    .stat-card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:var(--rs);padding:13px 15px;
+    }
+    .s-lbl{font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
+    .s-val{font-family:'Gmarket Sans',sans-serif;font-size:19px;font-weight:700;line-height:1}
+    .s-sub{font-size:10.5px;color:var(--t2);margin-top:3px}
+
+    /* ═══════════════════════════════════════════
+       FILTER
+    ═══════════════════════════════════════════ */
+    .filter-bar{
+      display:flex;align-items:center;gap:7px;margin-bottom:16px;flex-wrap:wrap;
+    }
+    .fl{font-size:11px;color:var(--t3);flex-shrink:0}
+    .fb{
+      padding:4px 12px;border-radius:20px;border:1px solid var(--border);
+      background:var(--card);color:var(--t2);font-size:11px;cursor:pointer;
+      transition:var(--tr);font-family:'Noto Sans KR',sans-serif;
+    }
+    .fb:hover,.fb.active{border-color:var(--blue);background:rgba(99,179,237,.07);color:var(--blue)}
+
+    /* ═══════════════════════════════════════════
+       GRID — align-items:start = 독립 높이
+    ═══════════════════════════════════════════ */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+      gap:12px;align-items:start;
+    }
+
+    /* ═══════════════════════════════════════════
+       CARD
+    ═══════════════════════════════════════════ */
+    .card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:var(--r);overflow:hidden;
+      position:relative;align-self:start;
+      transition:border-color .25s,box-shadow .25s,transform .25s;
+    }
+    .card::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:2px;
+      background:var(--cc,var(--blue));opacity:.5;transition:opacity .25s;
+    }
+    .card:hover{border-color:var(--borderB);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.22)}
+    .card:hover::before{opacity:1}
+    .card.is-top{border-color:rgba(246,201,14,.26);box-shadow:0 0 24px rgba(246,201,14,.09)}
+    .card.is-top::before{background:linear-gradient(90deg,var(--gold),var(--hot));opacity:1}
+    .card[data-g="hot"]  {--cc:var(--hot)}
+    .card[data-g="buy"]  {--cc:var(--buy)}
+    .card[data-g="neut"] {--cc:var(--neut)}
+    .card[data-g="watch"]{--cc:var(--watch)}
+    .card[data-g="cold"] {--cc:var(--cold)}
+
+    /* card header */
+    .ch{padding:16px 16px 12px;display:flex;align-items:flex-start;gap:12px;cursor:pointer;user-select:none}
+    .c-ico{
+      width:44px;height:44px;border-radius:11px;flex-shrink:0;
+      display:flex;align-items:center;justify-content:center;font-size:20px;
+      background:rgba(255,255,255,.04);border:1px solid var(--border);
+    }
+    .c-meta{flex:1;min-width:0}
+    .c-rank{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--t3)}
+    .c-name{font-family:'Gmarket Sans',sans-serif;font-size:14.5px;font-weight:700;margin:2px 0 1px;line-height:1.3}
+    .c-en  {font-size:10px;color:var(--t3)}
+    .c-scores{text-align:right;flex-shrink:0}
+    .c-comp{font-family:'JetBrains Mono',monospace;font-size:21px;font-weight:700;line-height:1}
+    .c-etfs{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--t3);margin-top:1px}
+    .c-grade{font-size:10.5px;margin-top:3px;font-weight:600}
+    .g-hot{color:var(--hot)} .g-buy{color:var(--buy)} .g-neut{color:var(--neut)}
+    .g-watch{color:var(--watch)} .g-cold{color:var(--cold)}
+
+    /* score bar */
+    .sbar{padding:0 16px 10px}
+    .sbar-track{height:3px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden}
+    .sbar-fill {height:100%;border-radius:3px;transition:width .9s cubic-bezier(.4,0,.2,1)}
+
+    /* breakdown bar */
+    .breakdown{padding:0 16px 12px}
+    .bd-title{font-size:9.5px;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;font-weight:600}
+    .bd-rows{display:flex;flex-direction:column;gap:4px}
+    .bd-row{display:flex;align-items:center;gap:7px}
+    .bd-lbl{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--t3);width:38px;flex-shrink:0}
+    .bd-bar-wrap{flex:1;height:4px;background:rgba(255,255,255,.04);border-radius:3px;overflow:hidden}
+    .bd-bar{height:100%;border-radius:3px;transition:width .8s cubic-bezier(.4,0,.2,1)}
+    .bd-val{font-family:'JetBrains Mono',monospace;font-size:9px;width:36px;text-align:right;flex-shrink:0}
+
+    /* ETF chips */
+    .etf-row{display:flex;gap:5px;padding:0 16px 10px;flex-wrap:wrap}
+    .etf-chip{
+      font-family:'JetBrains Mono',monospace;font-size:9.5px;
+      padding:2px 7px;border-radius:5px;
+      display:inline-flex;align-items:center;gap:4px;
+    }
+    .et{color:var(--t2)} .ep{font-weight:700}
+
+    /* news */
+    .c-news{
+      margin:0 16px 10px;padding:8px 10px;font-size:11px;
+      color:var(--t2);line-height:1.6;
+      background:rgba(255,255,255,.022);
+      border-left:2px solid var(--cc,var(--blue));
+      border-radius:0 5px 5px 0;
+    }
+
+    /* toggle button */
+    .ctog{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:9px 16px;border-top:1px solid var(--border);
+      cursor:pointer;user-select:none;transition:background .18s;
+    }
+    .ctog:hover{background:rgba(99,179,237,.04)}
+    .ctog-l{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--t3)}
+    .ctog-cnt{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:17px;height:17px;border-radius:50%;
+      background:rgba(99,179,237,.1);color:var(--blue);
+      font-size:9.5px;font-weight:700;
+    }
+    .ctog-arrow{font-size:9px;color:var(--t3);transition:transform .28s cubic-bezier(.4,0,.2,1)}
+    .card.expanded .ctog-arrow{transform:rotate(180deg)}
+
+    /* stock list — max-height transition */
+    .slist{
+      max-height:0;overflow:hidden;
+      transition:max-height .38s cubic-bezier(.4,0,.2,1);
+      border-top:0px solid var(--border);
+    }
+    .card.expanded .slist{max-height:640px;border-top:1px solid var(--border)}
+    .si{display:flex;align-items:center;gap:9px;padding:8px 16px;transition:background .14s}
+    .si:hover{background:rgba(255,255,255,.02)}
+    .si:last-child{padding-bottom:12px}
+    .si-n{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--t3);width:17px;flex-shrink:0}
+    .si-info{flex:1;min-width:0}
+    .si-name{font-size:12px;font-weight:500}
+    .si-tick{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--t3)}
+    .si-why{font-size:10px;color:var(--t2);text-align:right;max-width:120px;line-height:1.4}
+
+    /* ═══════════════════════════════════════════
+       LOADING / ERROR
+    ═══════════════════════════════════════════ */
+    .loading{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:260px;gap:13px}
+    .spinner{width:36px;height:36px;border-radius:50%;border:3px solid var(--border);border-top-color:var(--blue);animation:spin .75s linear infinite}
+    .loading p{font-size:12px;color:var(--t3)}
+    .err{text-align:center;padding:44px;color:var(--t3)}
+    .err h2{font-size:19px;margin-bottom:7px} .err p{font-size:12px}
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    footer{
+      text-align:center;padding:24px 16px;
+      border-top:1px solid var(--border);
+      font-size:11px;color:var(--t3);
+      position:relative;z-index:1;
+    }
+    footer a{color:var(--blue);text-decoration:none}
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media(max-width:860px){.grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){
+      main{padding:16px 11px 48px}
+      .hero h1{font-size:22px}
+      .grid{grid-template-columns:1fr}
+      .hd{height:52px}
+      .logo span:not(.logo-badge){display:none}
+      .clock-date,.data-badge{display:none}
+      .stats-row{grid-template-columns:1fr 1fr}
+      .top-banner{flex-wrap:wrap}
+      .tb-score{width:100%;text-align:left}
+      .macro-grid{grid-template-columns:1fr 1fr 1fr}
+    }
+    @media(max-width:400px){.macro-grid{grid-template-columns:1fr 1fr}}
   </style>
 </head>
 <body>
 
-<!-- ─── Header ─── -->
+<!-- ═══════ HEADER ═══════ -->
 <header>
-  <div class="header-inner">
+  <div class="hd">
     <div class="logo">
-      🌐 US→KR Sector<span>Compass</span>
-    </div>
-    <div class="header-right">
-      <div class="update-badge" id="updateBadge">
-        <div class="update-dot"></div>
-        <span id="updateTime">로딩 중...</span>
+      <div class="logo-flag">
+        <svg viewBox="0 0 100 66" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="66" fill="white"/>
+          <circle cx="50" cy="33" r="16" fill="#CD2E3A"/>
+          <path d="M50,17 A16,16,0 0,1 50,49 A8,8,0 0,1 50,33 A8,8,0 0,0 50,17 Z" fill="#003478"/>
+          <circle cx="50" cy="25" r="8" fill="#003478"/>
+          <circle cx="50" cy="41" r="8" fill="#CD2E3A"/>
+          <circle cx="50" cy="25" r="4" fill="#CD2E3A"/>
+          <circle cx="50" cy="41" r="4" fill="#003478"/>
+          <rect x="5"  y="8"  width="14" height="3" rx="1" fill="#111"/>
+          <rect x="5"  y="13" width="14" height="3" rx="1" fill="#111"/>
+          <rect x="5"  y="18" width="14" height="3" rx="1" fill="#111"/>
+          <rect x="81" y="8"  width="5"  height="3" rx="1" fill="#111"/>
+          <rect x="88" y="8"  width="5"  height="3" rx="1" fill="#111"/>
+          <rect x="81" y="13" width="14" height="3" rx="1" fill="#111"/>
+          <rect x="81" y="18" width="5"  height="3" rx="1" fill="#111"/>
+          <rect x="88" y="18" width="5"  height="3" rx="1" fill="#111"/>
+          <rect x="5"  y="45" width="14" height="3" rx="1" fill="#111"/>
+          <rect x="5"  y="50" width="5"  height="3" rx="1" fill="#111"/>
+          <rect x="12" y="50" width="7"  height="3" rx="1" fill="#111"/>
+          <rect x="5"  y="55" width="14" height="3" rx="1" fill="#111"/>
+          <rect x="81" y="45" width="5"  height="3" rx="1" fill="#111"/>
+          <rect x="88" y="45" width="5"  height="3" rx="1" fill="#111"/>
+          <rect x="81" y="50" width="5"  height="3" rx="1" fill="#111"/>
+          <rect x="88" y="50" width="5"  height="3" rx="1" fill="#111"/>
+          <rect x="81" y="55" width="5"  height="3" rx="1" fill="#111"/>
+          <rect x="88" y="55" width="5"  height="3" rx="1" fill="#111"/>
+        </svg>
       </div>
-      <button class="btn-theme" onclick="toggleTheme()" title="테마 전환">☀️</button>
+      US→KR Sector<span class="logo-badge">v2</span>
+    </div>
+
+    <div class="hr">
+      <div class="data-badge">
+        <div class="dot-g"></div>
+        <span id="updateTime">로딩 중…</span>
+      </div>
+      <div class="clock-wrap">
+        <div class="clock-flag">
+          <svg viewBox="0 0 100 66" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100" height="66" fill="white"/>
+            <circle cx="50" cy="33" r="16" fill="#CD2E3A"/>
+            <path d="M50,17 A16,16,0 0,1 50,49 A8,8,0 0,1 50,33 A8,8,0 0,0 50,17 Z" fill="#003478"/>
+            <circle cx="50" cy="25" r="8" fill="#003478"/>
+            <circle cx="50" cy="41" r="8" fill="#CD2E3A"/>
+            <circle cx="50" cy="25" r="4" fill="#CD2E3A"/>
+            <circle cx="50" cy="41" r="4" fill="#003478"/>
+          </svg>
+        </div>
+        <div>
+          <div class="clock-time"><span class="dot-tick"></span><span id="ct">--:--:--</span></div>
+          <div class="clock-date" id="cd">---- -- -- KST</div>
+        </div>
+      </div>
+      <button class="btn-theme" onclick="toggleTheme()" id="themeBtn">☀️</button>
     </div>
   </div>
 </header>
 
-<!-- ─── Main ─── -->
+<!-- ═══════ MAIN ═══════ -->
 <main>
 
-  <!-- Hero -->
   <div class="hero">
-    <div class="hero-tag">🇺🇸 미국 ETF 기반 → 🇰🇷 한국 주도주 자동 매핑</div>
-    <h1>미국장이 움직이면<br>한국 주도주가 보인다</h1>
-    <p>매일 미국 장 마감 후 ETF 데이터를 분석해 10개 섹터 점수와 한국 주도주를 자동으로 정렬합니다</p>
+    <div class="hero-tag">🇺🇸 ETF · SOX · DXY · 금리 · 중국 · VIX → 🇰🇷 복합 점수 자동 매핑</div>
+    <h1>6가지 지표로 계산한<br>오늘의 한국 주도주</h1>
+    <p>미국 ETF만이 아닌 반도체지수·달러·금리·중국·공포지수를 함께 분석해 더 정확하게 섹터를 선별합니다</p>
   </div>
 
-  <!-- Loading State -->
+  <!-- Loading -->
   <div class="loading" id="loadingState">
     <div class="spinner"></div>
-    <p>섹터 데이터 불러오는 중...</p>
+    <p>복합 지표 데이터 불러오는 중…</p>
   </div>
 
-  <!-- Content (hidden until data loads) -->
   <div id="content" style="display:none">
 
-    <!-- TOP Banner -->
-    <div class="top-banner" id="topBanner"></div>
-
-    <!-- Stats Row -->
-    <div class="stats-row" id="statsRow"></div>
-
-    <!-- Filter Bar -->
-    <div class="filter-bar">
-      <span class="filter-label">필터:</span>
-      <button class="filter-btn active" onclick="filterSectors('all', this)">전체 보기</button>
-      <button class="filter-btn" onclick="filterSectors('hot', this)">🔥 강력매수</button>
-      <button class="filter-btn" onclick="filterSectors('buy', this)">📈 매수</button>
-      <button class="filter-btn" onclick="filterSectors('neutral', this)">➡️ 중립</button>
-      <button class="filter-btn" onclick="filterSectors('watch', this)">📉 관망</button>
-      <button class="filter-btn" onclick="filterSectors('cold', this)">❄️ 회피</button>
+    <!-- 매크로 패널 -->
+    <div class="macro-panel">
+      <div class="macro-title">📡 매크로 지표 현황</div>
+      <div class="macro-grid" id="macroGrid"></div>
     </div>
 
-    <!-- Sectors Grid -->
-    <div class="sectors-grid" id="sectorsGrid"></div>
+    <!-- 실시간 갱신 바 -->
+    <div class="live-bar">
+      <div class="live-left">
+        <div class="dot-g"></div>
+        <span class="live-lbl">LIVE</span>
+        <span class="live-desc">페이지 접속 기준 자동 갱신 중</span>
+      </div>
+      <div class="live-right">
+        <div class="cd-badge">다음 갱신 <span id="cdEl">5:00</span></div>
+        <button class="btn-refresh" id="refreshBtn" onclick="manualRefresh()">
+          <i class="ri" id="ri">↺</i> 지금 갱신
+        </button>
+      </div>
+    </div>
+
+    <!-- TOP 배너 -->
+    <div class="top-banner" id="topBanner"></div>
+
+    <!-- Stats -->
+    <div class="stats-row" id="statsRow"></div>
+
+    <!-- 필터 -->
+    <div class="filter-bar">
+      <span class="fl">필터:</span>
+      <button class="fb active" onclick="filter('all',this)">전체</button>
+      <button class="fb" onclick="filter('hot',this)">🔥 강력매수</button>
+      <button class="fb" onclick="filter('buy',this)">📈 매수</button>
+      <button class="fb" onclick="filter('neut',this)">➡️ 중립</button>
+      <button class="fb" onclick="filter('watch',this)">📉 관망</button>
+      <button class="fb" onclick="filter('cold',this)">❄️ 회피</button>
+    </div>
+
+    <!-- 카드 그리드 -->
+    <div class="grid" id="grid"></div>
 
   </div>
 
-  <!-- Error State -->
-  <div id="errorState" style="display:none" class="error-msg">
+  <div id="errState" style="display:none" class="err">
     <h2>⚠️ 데이터를 불러올 수 없습니다</h2>
-    <p>잠시 후 다시 시도하거나, GitHub Actions 설정을 확인해주세요.</p>
+    <p>잠시 후 다시 시도하거나 GitHub Actions 설정을 확인하세요.</p>
   </div>
 
 </main>
 
-<!-- ─── Footer ─── -->
 <footer>
   <p>
-    📊 데이터 출처: yfinance (Yahoo Finance) | 
-    매일 미국 장 마감 후 자동 업데이트 |
-    <a href="sectors.json" target="_blank">sectors.json 보기</a>
+    📊 복합 점수: ETF 30% · SOX 15% · DXY 15% · 금리 15% · CSI300 15% · VIX 10% &nbsp;|&nbsp;
+    <a href="sectors.json" target="_blank">sectors.json ↗</a>
   </p>
-  <p style="margin-top:6px">⚠️ 본 정보는 투자 참고용이며 투자 권유가 아닙니다</p>
+  <p style="margin-top:4px">⚠️ 본 정보는 투자 참고용이며 투자 권유가 아닙니다</p>
 </footer>
 
 <script>
-// ─── Theme Toggle ─────────────────────────────────────────────
-function toggleTheme() {
-  const html = document.documentElement;
-  const isDark = html.getAttribute('data-theme') === 'dark';
-  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-  document.querySelector('.btn-theme').textContent = isDark ? '🌙' : '☀️';
-  localStorage.setItem('theme', isDark ? 'light' : 'dark');
-}
-
-// Restore theme
-(function() {
-  const saved = localStorage.getItem('theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', saved);
-  // Update button after DOM ready
-  window.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('.btn-theme').textContent = saved === 'dark' ? '☀️' : '🌙';
+/* ─── 테마 ─────────────────────────────────────────── */
+(function(){
+  const s=localStorage.getItem('theme')||'dark';
+  document.documentElement.setAttribute('data-theme',s);
+  document.addEventListener('DOMContentLoaded',()=>{
+    document.getElementById('themeBtn').textContent=s==='dark'?'☀️':'🌙';
   });
 })();
+function toggleTheme(){
+  const h=document.documentElement, dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('themeBtn').textContent=dark?'🌙':'☀️';
+  localStorage.setItem('theme',dark?'light':'dark');
+}
 
-// ─── Data Loading ─────────────────────────────────────────────
-let allSectors = [];
+/* ─── 실시간 KST 시계 ──────────────────────────────── */
+function tickClock(){
+  const k=new Date(Date.now()+9*3600*1000);
+  const p=n=>String(n).padStart(2,'0');
+  document.getElementById('ct').textContent=`${p(k.getUTCHours())}:${p(k.getUTCMinutes())}:${p(k.getUTCSeconds())}`;
+  document.getElementById('cd').textContent=
+    `${k.getUTCFullYear()}.${p(k.getUTCMonth()+1)}.${p(k.getUTCDate())} `+
+    `(${'일월화수목금토'[k.getUTCDay()]}) KST`;
+}
+tickClock(); setInterval(tickClock,1000);
 
-async function loadData() {
-  try {
-    const res = await fetch('sectors.json?t=' + Date.now());
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const data = await res.json();
-    
-    allSectors = data.sectors;
-    
-    // Update UI
-    document.getElementById('updateTime').textContent = data.generated_at || '업데이트됨';
-    renderTopBanner(data.sectors[0], data.generated_at);
+/* ─── 카운트다운 + 자동 갱신 ───────────────────────── */
+const INTERVAL=300; // 5분(초)
+let cd=INTERVAL, cdTimer=null;
+function startCountdown(){
+  clearInterval(cdTimer); cd=INTERVAL;
+  cdTimer=setInterval(()=>{
+    cd--;
+    const el=document.getElementById('cdEl');
+    if(el) el.textContent=`${Math.floor(cd/60)}:${String(cd%60).padStart(2,'0')}`;
+    if(cd<=0) loadData();
+  },1000);
+}
+function manualRefresh(){ loadData(); }
+
+/* ─── 데이터 로드 ───────────────────────────────────── */
+let allSectors=[], isLoading=false;
+
+async function loadData(){
+  if(isLoading) return;
+  isLoading=true;
+  const btn=document.getElementById('refreshBtn');
+  if(btn) btn.classList.add('spinning');
+  try{
+    const res=await fetch('sectors.json?t='+Date.now());
+    if(!res.ok) throw new Error(res.status);
+    const data=await res.json();
+    allSectors=data.sectors;
+    const ut=document.getElementById('updateTime');
+    if(ut) ut.textContent=data.generated_at||'업데이트됨';
+    renderMacro(data.macro_raw||{});
+    renderTopBanner(data.sectors[0]);
     renderStats(data);
-    renderSectors(data.sectors);
-    
-    document.getElementById('loadingState').style.display = 'none';
-    document.getElementById('content').style.display = 'block';
-    
-  } catch (err) {
-    console.error('데이터 로드 실패:', err);
-    document.getElementById('loadingState').style.display = 'none';
-    document.getElementById('errorState').style.display = 'block';
+    renderCards(data.sectors);
+    document.getElementById('loadingState').style.display='none';
+    document.getElementById('errState').style.display='none';
+    document.getElementById('content').style.display='block';
+    startCountdown();
+  }catch(e){
+    console.error(e);
+    document.getElementById('loadingState').style.display='none';
+    if(!allSectors.length) document.getElementById('errState').style.display='block';
+  }finally{
+    isLoading=false;
+    if(btn) btn.classList.remove('spinning');
   }
 }
 
-// ─── Render Top Banner ────────────────────────────────────────
-function renderTopBanner(top, date) {
-  if (!top) return;
-  const scoreClass = top.score > 0 ? 'positive' : top.score < 0 ? 'negative' : 'neutral';
-  const sign = top.score > 0 ? '+' : '';
-  
-  document.getElementById('topBanner').innerHTML = `
-    <div class="top-banner-icon">${top.icon}</div>
-    <div class="top-banner-content">
-      <div class="top-banner-label">🏆 오늘의 TOP 섹터</div>
-      <div class="top-banner-name">${top.name}</div>
-      <div class="top-banner-desc">${top.description}</div>
-    </div>
-    <div class="top-banner-score">
-      <div class="score-big">${sign}${top.score.toFixed(2)}</div>
-      <div class="score-label">섹터 점수</div>
-      <div style="margin-top:6px;font-size:12px;color:var(--accent-gold)">${top.grade}</div>
-    </div>
-  `;
+/* ─── 매크로 패널 ───────────────────────────────────── */
+const MACRO_META={
+  sox:  {label:'SOX 반도체',  desc:'필라델피아 반도체지수'},
+  dxy:  {label:'DXY 달러',    desc:'달러인덱스 (↑=강달러)'},
+  rate: {label:'미국채 10Y',  desc:'금리 (↑=성장주 불리)'},
+  china:{label:'CSI 300',     desc:'중국 대형주 (수출 수요)'},
+  vix:  {label:'VIX 공포',    desc:'공포지수 (↑=리스크 오프)'},
+};
+function renderMacro(raw){
+  if(!raw||!Object.keys(raw).length) return;
+  const g=document.getElementById('macroGrid');
+  g.innerHTML=Object.entries(MACRO_META).map(([k,m])=>{
+    const d=raw[k];
+    if(!d) return '';
+    const sc=d.signal, dp=d.day_chg;
+    const sc_cls=sc>0?'pos':sc<0?'neg':'zer';
+    const dp_cls=dp>0?'pos':dp<0?'neg':'zer';
+    const sign=v=>v>0?'+':'';
+    return `<div class="macro-item">
+      <div class="macro-label">${m.label}</div>
+      <div class="macro-ticker">${d.ticker}</div>
+      <div class="macro-row">
+        <span class="macro-signal ${sc_cls}">${sign(sc)}${sc.toFixed(2)}</span>
+        <span class="macro-day ${dp_cls}">${sign(dp)}${dp.toFixed(2)}%</span>
+      </div>
+      <div class="macro-desc">${m.desc}</div>
+    </div>`;
+  }).join('');
 }
 
-// ─── Render Stats ─────────────────────────────────────────────
-function renderStats(data) {
-  const sectors = data.sectors;
-  const hotCount = sectors.filter(s => s.grade_color === 'hot' || s.grade_color === 'buy').length;
-  const avgScore = (sectors.reduce((a, s) => a + s.score, 0) / sectors.length).toFixed(2);
-  const sign = avgScore > 0 ? '+' : '';
-  
-  document.getElementById('statsRow').innerHTML = `
-    <div class="stat-card">
-      <div class="stat-label">분석 섹터</div>
-      <div class="stat-value">${sectors.length}개</div>
-      <div class="stat-sub">10개 테마 섹터</div>
+/* ─── TOP 배너 ──────────────────────────────────────── */
+function renderTopBanner(s){
+  if(!s) return;
+  const sign=s.score>0?'+':'';
+  document.getElementById('topBanner').innerHTML=`
+    <div class="tb-ico">${s.icon}</div>
+    <div class="tb-body">
+      <div class="tb-lbl">🏆 오늘의 TOP 섹터</div>
+      <div class="tb-name">${s.name}</div>
+      <div class="tb-desc">${s.description}</div>
     </div>
-    <div class="stat-card">
-      <div class="stat-label">매수 신호</div>
-      <div class="stat-value" style="color:var(--buy)">${hotCount}개</div>
-      <div class="stat-sub">강력매수 + 매수</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">평균 점수</div>
-      <div class="stat-value" style="color:${avgScore > 0 ? 'var(--accent-green)' : 'var(--accent-red)'}">${sign}${avgScore}</div>
-      <div class="stat-sub">전 섹터 가중 평균</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">업데이트</div>
-      <div class="stat-value" style="font-size:14px;font-family:'Noto Sans KR'">${data.market_date || '-'}</div>
-      <div class="stat-sub">미국 장 기준일</div>
-    </div>
-  `;
+    <div class="tb-score">
+      <div class="tb-num">${sign}${s.score.toFixed(2)}</div>
+      <div class="tb-grade">${s.grade}</div>
+      <div class="tb-etf-score">ETF 단독 ${s.etf_score>0?'+':''}${s.etf_score.toFixed(2)}</div>
+    </div>`;
 }
 
-// ─── Render Sectors ───────────────────────────────────────────
-function renderSectors(sectors) {
-  const grid = document.getElementById('sectorsGrid');
-  grid.innerHTML = sectors.map((s, idx) => buildCard(s, idx)).join('');
+/* ─── Stats ─────────────────────────────────────────── */
+function renderStats(data){
+  const ss=data.sectors;
+  const hot=ss.filter(s=>s.grade_color==='hot'||s.grade_color==='buy').length;
+  const avg=ss.reduce((a,s)=>a+s.score,0)/ss.length;
+  const ac=avg>=0?'var(--green)':'var(--red)';
+  document.getElementById('statsRow').innerHTML=`
+    <div class="stat-card"><div class="s-lbl">분석 섹터</div><div class="s-val">${ss.length}개</div><div class="s-sub">10개 테마</div></div>
+    <div class="stat-card"><div class="s-lbl">매수 신호</div><div class="s-val" style="color:var(--buy)">${hot}개</div><div class="s-sub">강력매수+매수</div></div>
+    <div class="stat-card"><div class="s-lbl">복합 평균</div><div class="s-val" style="color:${ac}">${avg>=0?'+':''}${avg.toFixed(2)}</div><div class="s-sub">6개 지표 평균</div></div>
+    <div class="stat-card"><div class="s-lbl">기준일</div><div class="s-val" style="font-size:13px;font-family:'Noto Sans KR'">${data.market_date||'-'}</div><div class="s-sub">미국 장 기준</div></div>`;
 }
 
-function buildCard(s, idx) {
-  const isTop = idx === 0;
-  const scoreClass = s.score > 0 ? 'positive' : s.score < 0 ? 'negative' : 'neutral';
-  const sign = s.score > 0 ? '+' : '';
-  
-  // Score bar: normalize from -5 to +5 → 0 to 100%
-  const barPct = Math.min(100, Math.max(0, ((s.score + 5) / 10) * 100));
-  const barColor = s.grade_color === 'hot' ? 'var(--hot)' :
-                   s.grade_color === 'buy' ? 'var(--buy)' :
-                   s.grade_color === 'neutral' ? 'var(--neutral)' :
-                   s.grade_color === 'watch' ? 'var(--watch)' : 'var(--cold)';
+/* ─── 카드 렌더 ─────────────────────────────────────── */
+function renderCards(list){
+  // 이미 열린 카드 기억
+  const exp=new Set([...document.querySelectorAll('.card.expanded')].map(e=>e.dataset.id));
+  document.getElementById('grid').innerHTML=list.map((s,i)=>buildCard(s,i,exp.has(s.id))).join('');
+}
 
-  const etfTags = (s.etf_details && s.etf_details.length > 0 
-    ? s.etf_details.map(e => {
-        const sign = e.change_pct > 0 ? '+' : '';
-        const color = e.change_pct > 0 ? 'var(--buy)' : e.change_pct < 0 ? 'var(--accent-red)' : 'var(--neutral)';
-        return `<span class="etf-tag" style="border-color:${color}22;background:${color}11">
-          <span style="color:var(--text-secondary)">${e.ticker}</span>
-          <span style="color:${color};font-weight:600;margin-left:4px">${sign}${e.change_pct.toFixed(2)}%</span>
+/* ─── 카드 HTML 생성 ────────────────────────────────── */
+const BD_LABELS={etf:'ETF',sox:'SOX',dxy:'DXY',rate:'금리',china:'중국',vix:'VIX'};
+const BD_COLORS={etf:'#63b3ed',sox:'#a78bfa',dxy:'#f6c90e',rate:'#fc5c65',china:'#ff6b35',vix:'#4fd1c5'};
+
+function buildCard(s,idx,startExp){
+  const isTop=idx===0;
+  const sign=v=>v>0?'+':'';
+  const sc_cls=s.score>0?'pos':s.score<0?'neg':'zer';
+  const gc=s.grade_color==='neutral'?'neut':s.grade_color;
+
+  // 점수 바 −5~+5 → 0~100%
+  const barPct=Math.min(100,Math.max(0,(s.score+5)/10*100));
+  const barC={hot:'var(--hot)',buy:'var(--buy)',neut:'var(--neut)',neutral:'var(--neut)',watch:'var(--watch)',cold:'var(--cold)'}[gc]||'var(--neut)';
+
+  // 기여도 breakdown 바
+  const bd=s.breakdown||{};
+  const bdMax=Math.max(...Object.values(bd).map(Math.abs),0.01);
+  const bdHTML=Object.entries(BD_LABELS).map(([k,lbl])=>{
+    const v=bd[k]||0, pct=Math.min(100,Math.abs(v)/bdMax*100);
+    const vc=v>0?'var(--green)':'var(--red)';
+    const vCls=v>0?'pos':v<0?'neg':'zer';
+    return `<div class="bd-row">
+      <span class="bd-lbl">${lbl}</span>
+      <div class="bd-bar-wrap">
+        <div class="bd-bar" style="width:${pct}%;background:${BD_COLORS[k]};opacity:.75"></div>
+      </div>
+      <span class="bd-val ${vCls}">${sign(v)}${v.toFixed(2)}</span>
+    </div>`;
+  }).join('');
+
+  // ETF 칩
+  const etfHTML=(s.etf_details&&s.etf_details.length
+    ?s.etf_details.map(e=>{
+        const ep=e.change_pct>0?'+':'', ec=e.change_pct>0?'var(--buy)':e.change_pct<0?'var(--red)':'var(--neut)';
+        return `<span class="etf-chip" style="background:${ec}11;border:1px solid ${ec}28">
+          <span class="et">${e.ticker}</span><span class="ep" style="color:${ec}">${ep}${e.change_pct.toFixed(2)}%</span>
         </span>`;
       }).join('')
-    : s.etfs ? s.etfs.map(t => `<span class="etf-tag">${t}</span>`).join('') : ''
+    :(s.etfs||[]).map(t=>`<span class="etf-chip" style="background:rgba(99,179,237,.06);border:1px solid var(--border)"><span class="et">${t}</span></span>`).join('')
   );
 
-  const stockItems = s.korean_stocks.map((st, i) => `
-    <div class="stock-item">
-      <span class="stock-num">${String(i+1).padStart(2,'0')}</span>
-      <div class="stock-info">
-        <div class="stock-name">${st.name}</div>
-        <div class="stock-ticker">${st.ticker}</div>
-      </div>
-      <div class="stock-reason">${st.reason}</div>
-    </div>
-  `).join('');
+  // 종목 리스트
+  const stocksHTML=s.korean_stocks.map((st,i)=>`
+    <div class="si">
+      <span class="si-n">${String(i+1).padStart(2,'0')}</span>
+      <div class="si-info"><div class="si-name">${st.name}</div><div class="si-tick">${st.ticker}</div></div>
+      <div class="si-why">${st.reason}</div>
+    </div>`).join('');
 
   return `
-    <div class="sector-card ${isTop ? 'is-top' : ''}" 
-         data-grade="${s.grade_color}" 
-         data-id="${s.id}"
-         onclick="toggleCard(this)">
-      <div class="card-header">
-        <div class="card-icon-wrap">${s.icon}</div>
-        <div class="card-meta">
-          <div class="card-rank">#${s.rank || idx+1} RANK</div>
-          <div class="card-name">${s.name}</div>
-          <div class="card-name-en">${s.name_en}</div>
+    <div class="card${isTop?' is-top':''}${startExp?' expanded':''}" data-g="${gc}" data-id="${s.id}">
+      <div class="ch" onclick="toggle(this.closest('.card'))">
+        <div class="c-ico">${s.icon}</div>
+        <div class="c-meta">
+          <div class="c-rank">#${s.rank||idx+1} RANK</div>
+          <div class="c-name">${s.name}</div>
+          <div class="c-en">${s.name_en}</div>
         </div>
-        <div class="card-right">
-          <div class="card-score ${scoreClass}">${sign}${s.score.toFixed(2)}</div>
-          <div class="card-grade grade-${s.grade_color}">${s.grade}</div>
+        <div class="c-scores">
+          <div class="c-comp ${sc_cls}">${sign(s.score)}${s.score.toFixed(2)}</div>
+          <div class="c-etfs">ETF ${sign(s.etf_score)}${s.etf_score.toFixed(2)}</div>
+          <div class="c-grade g-${gc}">${s.grade}</div>
         </div>
       </div>
-      
-      <div class="score-bar-wrap">
-        <div class="score-bar-track">
-          <div class="score-bar-fill" style="width:${barPct}%;background:${barColor}"></div>
-        </div>
+
+      <div class="sbar">
+        <div class="sbar-track"><div class="sbar-fill" style="width:${barPct}%;background:${barC}"></div></div>
       </div>
-      
-      <div class="etf-tags">${etfTags}</div>
-      
-      <div class="card-news">📰 ${s.news}</div>
-      
-      <div class="card-toggle">
-        <span>한국 주도주 ${s.korean_stocks.length}개 보기</span>
-        <span class="arrow">▼</span>
+
+      <div class="breakdown">
+        <div class="bd-title">📊 점수 기여도 분해</div>
+        <div class="bd-rows">${bdHTML}</div>
       </div>
-      
-      <div class="stock-list">
-        ${stockItems}
+
+      <div class="etf-row">${etfHTML}</div>
+      <div class="c-news">📰 ${s.news}</div>
+
+      <div class="ctog" onclick="toggle(this.closest('.card'))">
+        <div class="ctog-l"><span class="ctog-cnt">${s.korean_stocks.length}</span>한국 주도주 보기</div>
+        <span class="ctog-arrow">▼</span>
       </div>
-    </div>
-  `;
+
+      <div class="slist">${stocksHTML}</div>
+    </div>`;
 }
 
-// ─── Toggle Card ──────────────────────────────────────────────
-function toggleCard(card) {
-  // Don't toggle if clicking stock items inside
-  card.classList.toggle('expanded');
-}
+/* ─── 카드 독립 토글 ────────────────────────────────── */
+function toggle(card){ card.classList.toggle('expanded'); }
 
-// ─── Filter ───────────────────────────────────────────────────
-function filterSectors(grade, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+/* ─── 필터 ──────────────────────────────────────────── */
+function filter(g,btn){
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  
-  const filtered = grade === 'all' 
-    ? allSectors 
-    : allSectors.filter(s => s.grade_color === grade);
-  
-  renderSectors(filtered);
+  const list=g==='all'?allSectors:allSectors.filter(s=>{
+    const gc=s.grade_color==='neutral'?'neut':s.grade_color;
+    return gc===g;
+  });
+  renderCards(list);
 }
 
-// ─── Init ─────────────────────────────────────────────────────
+/* ─── 초기 실행 ─────────────────────────────────────── */
 loadData();
-
-// Auto refresh every 5 minutes
-setInterval(loadData, 5 * 60 * 1000);
 </script>
-
 </body>
 </html>
