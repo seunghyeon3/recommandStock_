@@ -1,0 +1,234 @@
+{
+  "generated_at": "2026년 05월 09일 06:30 (KST)",
+  "generated_at_iso": "2026-05-09T06:30:00+09:00",
+  "total_sectors": 15,
+  "total_issues": 72,
+  "hot_sectors": ["로봇·자동화", "반도체", "방산·항공우주"],
+  "sectors": [
+    {
+      "id": "robot", "name": "로봇·자동화", "icon": "🤖", "color": "purple",
+      "colors": {"bg":"rgba(168,85,247,.08)","border":"rgba(168,85,247,.25)","text":"#a855f7"},
+      "kr_stocks": ["285490","464850","243570","267270","005380"],
+      "us_stocks": ["TER","ROK","ISRG","IRBT","FANUY"],
+      "kr_keywords": ["현대로보틱스","레인보우로보틱스","두산로보틱스","HD현대","현대차 로봇"],
+      "us_keywords": ["Boston Dynamics","Tesla Optimus","Figure AI","ABB","Rockwell"],
+      "hot": true, "pos_count": 5, "neg_count": 0,
+      "issues": [
+        {"title":"현대차그룹, 보스턴다이나믹스 통해 휴머노이드 로봇 대량 양산 계획 발표","link":"","pub":"05/09 09:12","source":"한국경제","sentiment":"positive","impact":5,"related_kr":["HD현대","현대차 로봇"],"related_us":["Boston Dynamics"]},
+        {"title":"레인보우로보틱스·두산로보틱스 상한가… 로봇 섹터 전체 급등","link":"","pub":"05/09 10:31","source":"매일경제","sentiment":"positive","impact":5,"related_kr":["레인보우로보틱스","두산로보틱스"],"related_us":[]},
+        {"title":"Tesla Optimus Gen3 공개, 작업 속도 2배 향상… 한국 협력사 수혜 기대","link":"","pub":"05/09 07:44","source":"전자신문","sentiment":"positive","impact":5,"related_kr":["현대로보틱스"],"related_us":["Tesla Optimus"]},
+        {"title":"Figure AI, 한국 로봇부품사와 공급망 협력 MOU 체결","link":"","pub":"05/08 18:20","source":"IT조선","sentiment":"positive","impact":4,"related_kr":[],"related_us":["Figure AI"]},
+        {"title":"한국 로봇산업 수출 첫 1조원 돌파… AI 로봇 글로벌 수요 폭발","link":"","pub":"05/08 14:05","source":"조선비즈","sentiment":"positive","impact":4,"related_kr":["현대로보틱스"],"related_us":["ABB"]}
+      ]
+    },
+    {
+      "id": "semiconductor", "name": "반도체", "icon": "💾", "color": "blue",
+      "colors": {"bg":"rgba(99,179,237,.08)","border":"rgba(99,179,237,.25)","text":"#63b3ed"},
+      "kr_stocks": ["005930","000660","042700","036930","240810"],
+      "us_stocks": ["NVDA","INTC","TSM","QCOM","AMD"],
+      "kr_keywords": ["삼성전자","SK하이닉스","한미반도체","주성엔지니어링","원익IPS"],
+      "us_keywords": ["NVIDIA","Intel","TSMC","Qualcomm","AMD"],
+      "hot": true, "pos_count": 4, "neg_count": 1,
+      "issues": [
+        {"title":"NVIDIA, SK하이닉스 HBM4 단독 공급 계약… 연간 10조 규모","link":"","pub":"05/09 08:55","source":"블룸버그코리아","sentiment":"positive","impact":5,"related_kr":["SK하이닉스"],"related_us":["NVIDIA"]},
+        {"title":"삼성전자 파운드리, TSMC 점유율 추격… 2나노 수율 개선 확인","link":"","pub":"05/09 07:30","source":"디일렉","sentiment":"positive","impact":4,"related_kr":["삼성전자"],"related_us":["TSMC"]},
+        {"title":"한미반도체, HBM 본딩 장비 북미 첫 직수출 성공","link":"","pub":"05/08 16:40","source":"연합뉴스","sentiment":"positive","impact":4,"related_kr":["한미반도체"],"related_us":["NVIDIA"]},
+        {"title":"Intel, 한국 파운드리 위탁생산 축소 검토… 삼성·SK 영향 우려","link":"","pub":"05/08 11:20","source":"로이터","sentiment":"negative","impact":3,"related_kr":["삼성전자"],"related_us":["Intel"]},
+        {"title":"Qualcomm, 시스템반도체 한국 설계센터 인력 200명 추가 채용","link":"","pub":"05/07 15:00","source":"전자신문","sentiment":"positive","impact":3,"related_kr":[],"related_us":["Qualcomm"]}
+      ]
+    },
+    {
+      "id": "defense", "name": "방산·항공우주", "icon": "🚀", "color": "orange",
+      "colors": {"bg":"rgba(255,107,53,.08)","border":"rgba(255,107,53,.25)","text":"#ff6b35"},
+      "kr_stocks": ["012450","047810","064350","272210","079550"],
+      "us_stocks": ["LMT","RTX","NOC","BA","LHX"],
+      "kr_keywords": ["한화에어로스페이스","한국항공우주","현대로템","한화시스템","LIG넥스원"],
+      "us_keywords": ["Lockheed Martin","Raytheon","Northrop","Boeing Defense","L3Harris"],
+      "hot": true, "pos_count": 5, "neg_count": 0,
+      "issues": [
+        {"title":"한화에어로스페이스, 폴란드 K9 자주포 2차 계약 12조원 확정","link":"","pub":"05/09 09:00","source":"국방일보","sentiment":"positive","impact":5,"related_kr":["한화에어로스페이스"],"related_us":[]},
+        {"title":"한국항공우주(KAI), FA-50 루마니아 36대 추가 수출 MOU 체결","link":"","pub":"05/09 08:10","source":"연합뉴스","sentiment":"positive","impact":5,"related_kr":["한국항공우주"],"related_us":["Lockheed Martin"]},
+        {"title":"Lockheed Martin, 한화시스템과 레이더·전자전 공동 개발 협약","link":"","pub":"05/08 14:30","source":"디펜스뉴스","sentiment":"positive","impact":4,"related_kr":["한화시스템"],"related_us":["Lockheed Martin"]},
+        {"title":"현대로템 K2전차, NATO 표준 인증 통과… 유럽 추가 수출 기대","link":"","pub":"05/08 10:50","source":"조선비즈","sentiment":"positive","impact":4,"related_kr":["현대로템"],"related_us":[]},
+        {"title":"LIG넥스원, 미 레이시온과 천궁-II 공동 마케팅 계약 체결","link":"","pub":"05/07 17:20","source":"한국경제","sentiment":"positive","impact":4,"related_kr":["LIG넥스원"],"related_us":["Raytheon"]}
+      ]
+    },
+    {
+      "id": "ev_battery", "name": "전기차·배터리", "icon": "🔋", "color": "green",
+      "colors": {"bg":"rgba(38,222,129,.08)","border":"rgba(38,222,129,.25)","text":"#26de81"},
+      "kr_stocks": ["373220","006400","086520","003670","005380"],
+      "us_stocks": ["TSLA","GM","F","RIVN","PCRFY"],
+      "kr_keywords": ["LG에너지솔루션","삼성SDI","에코프로","포스코퓨처엠","현대차 전기차"],
+      "us_keywords": ["Tesla","GM EV","Ford EV","Rivian","Panasonic battery"],
+      "hot": false, "pos_count": 3, "neg_count": 2,
+      "issues": [
+        {"title":"GM, LG에너지솔루션과 배터리 셀 2028년까지 공급 연장 합의","link":"","pub":"05/09 07:15","source":"블룸버그","sentiment":"positive","impact":5,"related_kr":["LG에너지솔루션"],"related_us":["GM EV"]},
+        {"title":"삼성SDI, 전고체 배터리 BMW 납품 계약 2027년 양산 목표 확인","link":"","pub":"05/08 15:00","source":"전자신문","sentiment":"positive","impact":4,"related_kr":["삼성SDI"],"related_us":[]},
+        {"title":"Tesla, IRA 보조금 축소 여파로 한국산 배터리 일부 물량 재협상 요구","link":"","pub":"05/08 11:30","source":"로이터","sentiment":"negative","impact":4,"related_kr":["LG에너지솔루션","삼성SDI"],"related_us":["Tesla"]},
+        {"title":"Rivian, 포스코퓨처엠 양극재 공급 협상 최종 단계… 연내 계약 전망","link":"","pub":"05/07 16:20","source":"한국경제","sentiment":"positive","impact":3,"related_kr":["포스코퓨처엠"],"related_us":["Rivian"]},
+        {"title":"에코프로, 미국 IRA 외국우려기관 지정 우려로 주가 약세","link":"","pub":"05/07 10:10","source":"매일경제","sentiment":"negative","impact":3,"related_kr":["에코프로"],"related_us":[]}
+      ]
+    },
+    {
+      "id": "bio_pharma", "name": "바이오·제약", "icon": "🧬", "color": "pink",
+      "colors": {"bg":"rgba(244,114,182,.08)","border":"rgba(244,114,182,.25)","text":"#f472b6"},
+      "kr_stocks": ["207940","068270","128940","000100","196170"],
+      "us_stocks": ["NVO","LLY","PFE","AZN","MRNA"],
+      "kr_keywords": ["삼성바이오로직스","셀트리온","한미약품","유한양행","알테오젠"],
+      "us_keywords": ["Novo Nordisk","Eli Lilly","Pfizer","AstraZeneca","Moderna"],
+      "hot": false, "pos_count": 4, "neg_count": 1,
+      "issues": [
+        {"title":"한미약품 비만치료제 GLP-1, 미국 FDA 패스트트랙 지정 획득","link":"","pub":"05/09 08:30","source":"바이오스펙테이터","sentiment":"positive","impact":5,"related_kr":["한미약품"],"related_us":["Novo Nordisk"]},
+        {"title":"삼성바이오로직스, Pfizer 바이오시밀러 CMO 4공장 추가 계약","link":"","pub":"05/08 17:00","source":"연합뉴스","sentiment":"positive","impact":5,"related_kr":["삼성바이오로직스"],"related_us":["Pfizer"]},
+        {"title":"알테오젠 SC 플랫폼, AstraZeneca 적용 임상 긍정 결과 발표","link":"","pub":"05/08 13:40","source":"의학신문","sentiment":"positive","impact":4,"related_kr":["알테오젠"],"related_us":["AstraZeneca"]},
+        {"title":"셀트리온 바이오시밀러, 美 가격 인하 압박으로 마진 축소 우려","link":"","pub":"05/07 14:20","source":"파이낸셜뉴스","sentiment":"negative","impact":3,"related_kr":["셀트리온"],"related_us":[]},
+        {"title":"유한양행 레이저티닙, Eli Lilly와 공동 마케팅 계약 미국 론칭","link":"","pub":"05/07 09:50","source":"청년의사","sentiment":"positive","impact":4,"related_kr":["유한양행"],"related_us":["Eli Lilly"]}
+      ]
+    },
+    {
+      "id": "ai_sw", "name": "AI·소프트웨어", "icon": "🧠", "color": "cyan",
+      "colors": {"bg":"rgba(79,209,197,.08)","border":"rgba(79,209,197,.25)","text":"#4fd1c5"},
+      "kr_stocks": ["035420","035720","017670","030200","376300"],
+      "us_stocks": ["MSFT","GOOGL","META","CRM","NOW"],
+      "kr_keywords": ["NAVER","카카오","SKT AI","KT AI","솔트룩스"],
+      "us_keywords": ["OpenAI","Microsoft","Google","Meta AI","Anthropic"],
+      "hot": false, "pos_count": 3, "neg_count": 1,
+      "issues": [
+        {"title":"NAVER 하이퍼클로바X, Microsoft Azure에 한국어 AI 모델 탑재 협약","link":"","pub":"05/09 08:00","source":"전자신문","sentiment":"positive","impact":5,"related_kr":["NAVER"],"related_us":["Microsoft"]},
+        {"title":"Google, 한국 AI 스타트업 3곳에 총 500억 투자 발표","link":"","pub":"05/08 16:00","source":"IT조선","sentiment":"positive","impact":4,"related_kr":[],"related_us":["Google"]},
+        {"title":"카카오 AI 서비스, Meta와 SNS 연동 파트너십 체결","link":"","pub":"05/08 10:30","source":"디지털데일리","sentiment":"positive","impact":3,"related_kr":["카카오"],"related_us":["Meta AI"]},
+        {"title":"OpenAI GPT-5, 한국어 성능 강화로 NAVER·카카오 AI 경쟁 격화","link":"","pub":"05/07 15:30","source":"블로터","sentiment":"negative","impact":3,"related_kr":["NAVER","카카오"],"related_us":["OpenAI"]}
+      ]
+    },
+    {
+      "id": "clean_energy", "name": "클린에너지·원전", "icon": "☀️", "color": "yellow",
+      "colors": {"bg":"rgba(251,191,36,.08)","border":"rgba(251,191,36,.25)","text":"#fbbf24"},
+      "kr_stocks": ["009830","034020","015760","010120","112610"],
+      "us_stocks": ["FSLR","CEG","BE","NEE","ENPH"],
+      "kr_keywords": ["한화솔루션","두산에너빌리티","한국전력","LS ELECTRIC","씨에스윈드"],
+      "us_keywords": ["First Solar","Constellation Energy","Bloom Energy","NextEra"],
+      "hot": false, "pos_count": 3, "neg_count": 1,
+      "issues": [
+        {"title":"두산에너빌리티, 미국 SMR 원전 기자재 수출 첫 계약 체결","link":"","pub":"05/09 07:50","source":"에너지경제","sentiment":"positive","impact":5,"related_kr":["두산에너빌리티"],"related_us":["Constellation Energy"]},
+        {"title":"한화솔루션, 미국 IRA 태양광 보조금 최대 수혜 기업 선정","link":"","pub":"05/08 14:10","source":"한국경제","sentiment":"positive","impact":4,"related_kr":["한화솔루션"],"related_us":["First Solar"]},
+        {"title":"LS ELECTRIC, NextEra와 전력 인프라 공급 MOU… 미국 전력망 확대","link":"","pub":"05/08 11:00","source":"연합뉴스","sentiment":"positive","impact":4,"related_kr":["LS ELECTRIC"],"related_us":["NextEra"]},
+        {"title":"미국 IRA 청정에너지 보조금 일부 삭감 논의… 한국 태양광 수혜 불확실","link":"","pub":"05/07 13:20","source":"파이낸셜타임스","sentiment":"negative","impact":3,"related_kr":["한화솔루션"],"related_us":[]}
+      ]
+    },
+    {
+      "id": "shipbuilding", "name": "조선·해양", "icon": "🚢", "color": "teal",
+      "colors": {"bg":"rgba(45,212,191,.08)","border":"rgba(45,212,191,.25)","text":"#2dd4bf"},
+      "kr_stocks": ["009540","010140","042660","011200","267270"],
+      "us_stocks": ["MATX","ZIM","DAC","SBLK","GSL"],
+      "kr_keywords": ["HD한국조선해양","삼성중공업","한화오션","HMM","HD현대중공업"],
+      "us_keywords": ["LNG carrier","containership order","shipping freight"],
+      "hot": false, "pos_count": 4, "neg_count": 0,
+      "issues": [
+        {"title":"HD한국조선해양, 카타르 LNG선 23척 수주… 역대 최대 단일 계약","link":"","pub":"05/09 08:40","source":"연합뉴스","sentiment":"positive","impact":5,"related_kr":["HD한국조선해양"],"related_us":[]},
+        {"title":"삼성중공업, 미국 LNG 터미널용 모듈 공급 수주 1.2조원","link":"","pub":"05/08 15:30","source":"조선비즈","sentiment":"positive","impact":4,"related_kr":["삼성중공업"],"related_us":[]},
+        {"title":"한화오션, 미 해군 함정 MRO 사업 입찰 적격업체 선정","link":"","pub":"05/08 10:00","source":"국방일보","sentiment":"positive","impact":4,"related_kr":["한화오션"],"related_us":[]},
+        {"title":"글로벌 해운 운임 반등… HMM 실적 개선 기대 재부각","link":"","pub":"05/07 16:40","source":"해운신문","sentiment":"positive","impact":3,"related_kr":["HMM"],"related_us":["ZIM"]}
+      ]
+    },
+    {
+      "id": "finance", "name": "금융·핀테크", "icon": "🏦", "color": "gold",
+      "colors": {"bg":"rgba(246,201,14,.08)","border":"rgba(246,201,14,.25)","text":"#f6c90e"},
+      "kr_stocks": ["105560","055550","377300","016360","071050"],
+      "us_stocks": ["JPM","GS","BLK","V","MA"],
+      "kr_keywords": ["KB금융","신한지주","카카오페이","토스","삼성증권"],
+      "us_keywords": ["JPMorgan","Goldman Sachs","BlackRock","Visa","Mastercard"],
+      "hot": false, "pos_count": 2, "neg_count": 1,
+      "issues": [
+        {"title":"BlackRock, KB금융과 한국 ESG 채권 공동 운용 펀드 출시","link":"","pub":"05/09 07:30","source":"이데일리","sentiment":"positive","impact":4,"related_kr":["KB금융"],"related_us":["BlackRock"]},
+        {"title":"카카오페이, Visa와 글로벌 결제 인프라 연동 협력 발표","link":"","pub":"05/08 13:00","source":"파이낸셜뉴스","sentiment":"positive","impact":3,"related_kr":["카카오페이"],"related_us":["Visa"]},
+        {"title":"미국 금리 동결 장기화 우려… 한국 은행주 NIM 개선 속도 지연","link":"","pub":"05/07 11:30","source":"매일경제","sentiment":"negative","impact":3,"related_kr":["KB금융","신한지주"],"related_us":["JPMorgan"]}
+      ]
+    },
+    {
+      "id": "telecom_media", "name": "통신·콘텐츠", "icon": "📡", "color": "violet",
+      "colors": {"bg":"rgba(139,92,246,.08)","border":"rgba(139,92,246,.25)","text":"#8b5cf6"},
+      "kr_stocks": ["017670","030200","352820","041510","035900"],
+      "us_stocks": ["NFLX","SPOT","GOOGL","DIS","WBD"],
+      "kr_keywords": ["SK텔레콤","KT","하이브","에스엠","카카오엔터"],
+      "us_keywords": ["Netflix","Spotify","YouTube","Disney","K-pop global"],
+      "hot": false, "pos_count": 3, "neg_count": 0,
+      "issues": [
+        {"title":"하이브·에스엠, Netflix와 K팝 오리지널 콘텐츠 독점 계약 체결","link":"","pub":"05/09 09:20","source":"스타뉴스","sentiment":"positive","impact":4,"related_kr":["하이브","에스엠"],"related_us":["Netflix"]},
+        {"title":"Spotify, 한국 K팝 플레이리스트 전 세계 1위… 월 스트림 20억 돌파","link":"","pub":"05/08 14:00","source":"빌보드코리아","sentiment":"positive","impact":3,"related_kr":["에스엠"],"related_us":["Spotify"]},
+        {"title":"SK텔레콤, Microsoft와 AI 통신 인프라 공동 투자 협약","link":"","pub":"05/08 09:40","source":"연합뉴스","sentiment":"positive","impact":3,"related_kr":["SK텔레콤"],"related_us":["Microsoft"]}
+      ]
+    },
+    {
+      "id": "display", "name": "디스플레이·부품", "icon": "📺", "color": "indigo",
+      "colors": {"bg":"rgba(99,102,241,.08)","border":"rgba(99,102,241,.25)","text":"#6366f1"},
+      "kr_stocks": ["034220","213420","078600","272290"],
+      "us_stocks": ["AAPL","META","GOOGL","SNE"],
+      "kr_keywords": ["LG디스플레이","삼성디스플레이","덕산네오룩스","이녹스첨단소재"],
+      "us_keywords": ["Apple display","OLED demand","Meta Quest display","Vision Pro"],
+      "hot": false, "pos_count": 2, "neg_count": 1,
+      "issues": [
+        {"title":"Apple, 삼성디스플레이에 아이폰18 OLED 물량 30% 추가 발주","link":"","pub":"05/09 08:10","source":"더엘렉","sentiment":"positive","impact":5,"related_kr":["삼성디스플레이"],"related_us":["Apple display"]},
+        {"title":"Meta Quest4, LG디스플레이 마이크로OLED 탑재 확정","link":"","pub":"05/08 12:30","source":"전자신문","sentiment":"positive","impact":4,"related_kr":["LG디스플레이"],"related_us":["Meta Quest display"]},
+        {"title":"LG디스플레이, LCD 패널 공급 과잉으로 2분기 실적 부진 전망","link":"","pub":"05/07 15:50","source":"한국경제","sentiment":"negative","impact":3,"related_kr":["LG디스플레이"],"related_us":[]}
+      ]
+    },
+    {
+      "id": "consumer", "name": "소비재·K브랜드", "icon": "🛍️", "color": "rose",
+      "colors": {"bg":"rgba(251,113,133,.08)","border":"rgba(251,113,133,.25)","text":"#fb7185"},
+      "kr_stocks": ["005380","000270","090430","051900","271560"],
+      "us_stocks": ["AMZN","WMT","COST","TGT","HD"],
+      "kr_keywords": ["현대차","기아","아모레퍼시픽","LG생활건강","오리온"],
+      "us_keywords": ["Amazon","Walmart","Costco","Target","K-beauty trend"],
+      "hot": false, "pos_count": 3, "neg_count": 1,
+      "issues": [
+        {"title":"현대차·기아 미국 4월 판매량 역대 최고… 하이브리드 수요 폭발","link":"","pub":"05/09 07:00","source":"오토데일리","sentiment":"positive","impact":4,"related_kr":["현대차","기아"],"related_us":["Amazon"]},
+        {"title":"아모레퍼시픽 K뷰티, Amazon 뷰티 카테고리 1위 등극","link":"","pub":"05/08 11:20","source":"뷰티경제","sentiment":"positive","impact":4,"related_kr":["아모레퍼시픽"],"related_us":["Amazon"]},
+        {"title":"오리온, Costco 미국 전 매장 입점 확정… K스낵 글로벌화 본격화","link":"","pub":"05/08 09:00","source":"식품음료신문","sentiment":"positive","impact":3,"related_kr":["오리온"],"related_us":["Costco"]},
+        {"title":"미국 관세 인상으로 한국산 자동차 부품 가격 경쟁력 일부 약화","link":"","pub":"05/07 14:00","source":"로이터","sentiment":"negative","impact":3,"related_kr":["현대차","기아"],"related_us":["Target"]}
+      ]
+    },
+    {
+      "id": "steel_material", "name": "철강·소재", "icon": "⚙️", "color": "slate",
+      "colors": {"bg":"rgba(148,163,184,.08)","border":"rgba(148,163,184,.25)","text":"#94a3b8"},
+      "kr_stocks": ["005490","004020","010130","003670"],
+      "us_stocks": ["X","NUE","FCX","ALB","MP"],
+      "kr_keywords": ["POSCO홀딩스","현대제철","고려아연","포스코퓨처엠"],
+      "us_keywords": ["US Steel","Nucor","Freeport McMoRan","Albemarle","Lithium"],
+      "hot": false, "pos_count": 2, "neg_count": 2,
+      "issues": [
+        {"title":"고려아연, Freeport McMoRan과 동 제련 협력… 리튬 공급망 다변화","link":"","pub":"05/08 16:10","source":"연합뉴스","sentiment":"positive","impact":4,"related_kr":["고려아연"],"related_us":["Freeport McMoRan"]},
+        {"title":"POSCO홀딩스, Albemarle과 리튬 정제 합작법인 미국 설립 추진","link":"","pub":"05/08 10:40","source":"한국경제","sentiment":"positive","impact":4,"related_kr":["POSCO홀딩스"],"related_us":["Albemarle"]},
+        {"title":"미국 철강 관세 25% 유지… 현대제철 수출 부담 지속","link":"","pub":"05/07 13:00","source":"로이터","sentiment":"negative","impact":3,"related_kr":["현대제철"],"related_us":["US Steel"]},
+        {"title":"리튬 가격 추가 하락… 에코프로·포스코퓨처엠 수익성 악화 우려","link":"","pub":"05/07 10:30","source":"매일경제","sentiment":"negative","impact":3,"related_kr":["포스코퓨처엠"],"related_us":["Albemarle"]}
+      ]
+    },
+    {
+      "id": "logistics", "name": "물류·이커머스", "icon": "📦", "color": "amber",
+      "colors": {"bg":"rgba(251,146,60,.08)","border":"rgba(251,146,60,.25)","text":"#fb923c"},
+      "kr_stocks": ["000120","002320","003160","011200","086280"],
+      "us_stocks": ["AMZN","FDX","UPS","CHRW","XPO"],
+      "kr_keywords": ["CJ대한통운","한진","쿠팡","HMM","롯데글로벌로지스"],
+      "us_keywords": ["Amazon Logistics","FedEx","UPS","Maersk","DHL"],
+      "hot": false, "pos_count": 2, "neg_count": 1,
+      "issues": [
+        {"title":"쿠팡, 미국 물류 자회사 통해 FedEx 일부 노선 대체 서비스 시작","link":"","pub":"05/09 08:50","source":"이데일리","sentiment":"positive","impact":4,"related_kr":["쿠팡"],"related_us":["FedEx"]},
+        {"title":"CJ대한통운, Amazon 물류 파트너십 아시아 최초 글로벌 계약","link":"","pub":"05/08 13:20","source":"물류신문","sentiment":"positive","impact":4,"related_kr":["CJ대한통운"],"related_us":["Amazon Logistics"]},
+        {"title":"글로벌 해운 운임 단기 급등 후 조정… HMM 변동성 확대","link":"","pub":"05/07 12:40","source":"해운신문","sentiment":"negative","impact":2,"related_kr":["HMM"],"related_us":["Maersk"]}
+      ]
+    },
+    {
+      "id": "construction", "name": "건설·인프라", "icon": "🏗️", "color": "stone",
+      "colors": {"bg":"rgba(168,162,158,.08)","border":"rgba(168,162,158,.25)","text":"#a8a29e"},
+      "kr_stocks": ["000720","028260","006360","047040","009830"],
+      "us_stocks": ["FLR","ACM","PWR","STRL","EME"],
+      "kr_keywords": ["현대건설","삼성물산","GS건설","대우건설","한화건설"],
+      "us_keywords": ["Bechtel","Fluor","infrastructure bill","data center construction"],
+      "hot": false, "pos_count": 3, "neg_count": 0,
+      "issues": [
+        {"title":"삼성물산, 미국 데이터센터 건설 수주 2조원… AI 인프라 붐 수혜","link":"","pub":"05/09 09:30","source":"조선비즈","sentiment":"positive","impact":5,"related_kr":["삼성물산"],"related_us":["data center construction"]},
+        {"title":"현대건설, 사우디 네옴시티 인프라 2공구 수주 3.5조원 확정","link":"","pub":"05/08 16:50","source":"건설경제","sentiment":"positive","impact":4,"related_kr":["현대건설"],"related_us":[]},
+        {"title":"GS건설, 미국 Fluor와 LNG 플랜트 공동 입찰 컨소시엄 구성","link":"","pub":"05/08 11:10","source":"연합뉴스","sentiment":"positive","impact":3,"related_kr":["GS건설"],"related_us":["Fluor"]}
+      ]
+    }
+  ]
+}
