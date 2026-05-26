@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026년 05월 26일 07:34 (KST)",
-  "generated_at_iso": "2026-05-26T07:34:05.144400+09:00",
+  "generated_at": "2026년 05월 27일 07:47 (KST)",
+  "generated_at_iso": "2026-05-27T07:47:21.245529+09:00",
   "total_sectors": 10,
   "top_sector": "기술·반도체",
-  "market_date": "2026-05-25",
+  "market_date": "2026-05-26",
   "macro_raw": {
     "sox": {
       "ticker": "^SOX",
-      "day_chg": 1.993,
-      "month_chg": 21.074,
-      "signal": 7.3188
+      "day_chg": 5.526,
+      "month_chg": 23.721,
+      "signal": 9.8794
     },
     "dxy": {
       "ticker": "DX-Y.NYB",
-      "day_chg": -0.082,
-      "month_chg": 0.771,
-      "signal": 0.1904
+      "day_chg": -0.18,
+      "month_chg": 0.671,
+      "signal": 0.1112
     },
     "rate": {
       "ticker": "^TNX",
-      "day_chg": -0.611,
-      "month_chg": 5.12,
-      "signal": 1.2307
+      "day_chg": -1.426,
+      "month_chg": 3.621,
+      "signal": 0.3732
     },
     "china": {
       "ticker": "000300.SS",
@@ -31,17 +31,17 @@
     },
     "vix": {
       "ticker": "^VIX",
-      "day_chg": -0.659,
-      "month_chg": -7.936,
-      "signal": -1.8506
+      "day_chg": 2.532,
+      "month_chg": -5.605,
+      "signal": -0.1083
     }
   },
   "macro": {
-    "sox": 7.3188,
-    "dxy": 0.1904,
-    "rate": 1.2307,
+    "sox": 9.8794,
+    "dxy": 0.1112,
+    "rate": 0.3732,
     "china": NaN,
-    "vix": -1.8506
+    "vix": -0.1083
   },
   "sectors": [
     {
@@ -51,7 +51,7 @@
       "icon": "💾",
       "description": "AI·반도체·클라우드 중심 성장 섹터",
       "score": NaN,
-      "etf_score": 7.278,
+      "etf_score": 9.712,
       "grade": "❄️ 회피",
       "grade_color": "cold",
       "news": "반도체 AI 수요 급증으로 빅테크 설비투자 확대 중. HBM 메모리 공급 부족 지속.",
@@ -63,36 +63,36 @@
       "etf_details": [
         {
           "ticker": "XLK",
-          "price": 180.39,
-          "change_pct": 1.0,
-          "month_change": 15.75,
-          "vol_ratio": 0.74,
-          "score": 5.644
+          "price": 185.14,
+          "change_pct": 2.63,
+          "month_change": 15.3,
+          "vol_ratio": 1.0,
+          "score": 7.158
         },
         {
           "ticker": "SOXX",
-          "price": 537.33,
-          "change_pct": 2.41,
-          "month_change": 21.84,
-          "vol_ratio": 0.79,
-          "score": 8.863
+          "price": 570.09,
+          "change_pct": 6.1,
+          "month_change": 25.18,
+          "vol_ratio": 0.94,
+          "score": 12.273
         },
         {
           "ticker": "SMH",
-          "price": 576.32,
-          "change_pct": 1.49,
-          "month_change": 19.61,
-          "vol_ratio": 0.72,
-          "score": 7.328
+          "price": 602.14,
+          "change_pct": 4.48,
+          "month_change": 18.94,
+          "vol_ratio": 1.08,
+          "score": 9.707
         }
       ],
       "breakdown": {
-        "etf": 2.183,
-        "sox": 1.83,
-        "dxy": 0.019,
-        "rate": -0.185,
+        "etf": 2.914,
+        "sox": 2.47,
+        "dxy": 0.011,
+        "rate": -0.056,
         "china": NaN,
-        "vix": 0.185
+        "vix": 0.011
       },
       "sensitivity": {
         "etf": 0.3,
@@ -154,7 +154,7 @@
           "reason": "동박·반도체 소재"
         }
       ],
-      "updated_at": "2026-05-26 07:34",
+      "updated_at": "2026-05-27 07:47",
       "rank": 1
     },
     {
@@ -164,7 +164,7 @@
       "icon": "🤖",
       "description": "생성AI·데이터·플랫폼 고성장 섹터",
       "score": NaN,
-      "etf_score": 3.026,
+      "etf_score": 4.116,
       "grade": "❄️ 회피",
       "grade_color": "cold",
       "news": "생성AI 채택 가속화로 소프트웨어 기업 실적 상향. 클라우드 지출 증가세.",
@@ -176,36 +176,36 @@
       "etf_details": [
         {
           "ticker": "AIQ",
-          "price": 62.81,
-          "change_pct": 0.32,
-          "month_change": 17.38,
-          "vol_ratio": 0.94,
-          "score": 6.846
+          "price": 65.2,
+          "change_pct": 3.81,
+          "month_change": 17.73,
+          "vol_ratio": 1.24,
+          "score": 9.575
         },
         {
           "ticker": "BOTZ",
-          "price": 40.29,
-          "change_pct": 1.61,
-          "month_change": 9.9,
-          "vol_ratio": 0.88,
-          "score": 4.135
+          "price": 40.9,
+          "change_pct": 1.51,
+          "month_change": 6.26,
+          "vol_ratio": 1.02,
+          "score": 3.175
         },
         {
           "ticker": "ARKK",
-          "price": 76.4,
-          "change_pct": -0.29,
-          "month_change": -0.13,
-          "vol_ratio": 0.57,
-          "score": -1.903
+          "price": 77.23,
+          "change_pct": 1.09,
+          "month_change": 0.89,
+          "vol_ratio": 0.7,
+          "score": -0.403
         }
       ],
       "breakdown": {
-        "etf": 1.059,
-        "sox": 1.098,
-        "dxy": 0.01,
-        "rate": -0.308,
+        "etf": 1.441,
+        "sox": 1.482,
+        "dxy": 0.006,
+        "rate": -0.093,
         "china": NaN,
-        "vix": 0.278
+        "vix": 0.016
       },
       "sensitivity": {
         "etf": 0.35,
@@ -267,7 +267,7 @@
           "reason": "AI NPC·메타버스"
         }
       ],
-      "updated_at": "2026-05-26 07:34",
+      "updated_at": "2026-05-27 07:47",
       "rank": 2
     },
     {
@@ -277,7 +277,7 @@
       "icon": "⚡",
       "description": "원유·원자력·희토류 자원 섹터",
       "score": NaN,
-      "etf_score": -2.38,
+      "etf_score": -1.225,
       "grade": "❄️ 회피",
       "grade_color": "cold",
       "news": "원유 공급 불안과 원전 르네상스로 에너지 섹터 주목. LNG 수요 증가 지속.",
@@ -289,36 +289,36 @@
       "etf_details": [
         {
           "ticker": "XLE",
-          "price": 59.49,
-          "change_pct": 0.61,
-          "month_change": 4.41,
-          "vol_ratio": 0.94,
-          "score": 1.766
+          "price": 57.85,
+          "change_pct": -2.76,
+          "month_change": 1.9,
+          "vol_ratio": 0.82,
+          "score": -1.061
         },
         {
           "ticker": "XLB",
-          "price": 50.29,
-          "change_pct": 0.54,
-          "month_change": -2.93,
-          "vol_ratio": 0.52,
-          "score": -2.863
+          "price": 50.99,
+          "change_pct": 1.39,
+          "month_change": -1.53,
+          "vol_ratio": 0.66,
+          "score": -1.427
         },
         {
           "ticker": "URA",
-          "price": 48.96,
-          "change_pct": 0.2,
-          "month_change": -13.3,
-          "vol_ratio": 0.8,
-          "score": -6.044
+          "price": 50.86,
+          "change_pct": 3.88,
+          "month_change": -10.3,
+          "vol_ratio": 1.34,
+          "score": -1.188
         }
       ],
       "breakdown": {
-        "etf": -0.595,
-        "sox": -0.366,
-        "dxy": -0.038,
-        "rate": 0.062,
+        "etf": -0.306,
+        "sox": -0.494,
+        "dxy": -0.022,
+        "rate": 0.019,
         "china": NaN,
-        "vix": 0.278
+        "vix": 0.016
       },
       "sensitivity": {
         "etf": 0.25,
@@ -380,7 +380,7 @@
           "reason": "동박·에너지 소재"
         }
       ],
-      "updated_at": "2026-05-26 07:34",
+      "updated_at": "2026-05-27 07:47",
       "rank": 3
     },
     {
@@ -390,7 +390,7 @@
       "icon": "🏦",
       "description": "금리·신용·자산관리 핵심 섹터",
       "score": NaN,
-      "etf_score": -1.98,
+      "etf_score": -0.23,
       "grade": "❄️ 회피",
       "grade_color": "cold",
       "news": "금리 고점 확인 후 은행주 밸류에이션 재평가. 대출 성장 회복 기대.",
@@ -402,36 +402,36 @@
       "etf_details": [
         {
           "ticker": "XLF",
-          "price": 51.94,
-          "change_pct": 0.41,
-          "month_change": 0.27,
-          "vol_ratio": 0.65,
-          "score": -1.147
+          "price": 51.85,
+          "change_pct": -0.17,
+          "month_change": 0.08,
+          "vol_ratio": 0.73,
+          "score": -1.129
         },
         {
           "ticker": "KRE",
-          "price": 69.37,
-          "change_pct": 0.23,
-          "month_change": -0.9,
-          "vol_ratio": 0.57,
-          "score": -2.004
+          "price": 70.3,
+          "change_pct": 1.34,
+          "month_change": 0.33,
+          "vol_ratio": 1.12,
+          "score": 1.16
         },
         {
           "ticker": "KBE",
-          "price": 63.54,
-          "change_pct": 0.13,
-          "month_change": -1.23,
-          "vol_ratio": 0.41,
-          "score": -2.789
+          "price": 64.24,
+          "change_pct": 1.1,
+          "month_change": -0.22,
+          "vol_ratio": 0.73,
+          "score": -0.721
         }
       ],
       "breakdown": {
-        "etf": -0.594,
-        "sox": -0.366,
-        "dxy": 0.019,
-        "rate": 0.369,
+        "etf": -0.069,
+        "sox": -0.494,
+        "dxy": 0.011,
+        "rate": 0.112,
         "china": NaN,
-        "vix": 0.37
+        "vix": 0.022
       },
       "sensitivity": {
         "etf": 0.3,
@@ -493,7 +493,7 @@
           "reason": "소형 고배당 증권"
         }
       ],
-      "updated_at": "2026-05-26 07:34",
+      "updated_at": "2026-05-27 07:47",
       "rank": 4
     },
     {
@@ -503,7 +503,7 @@
       "icon": "🧬",
       "description": "신약·의료기기·바이오시밀러 성장 섹터",
       "score": NaN,
-      "etf_score": -1.624,
+      "etf_score": -0.904,
       "grade": "❄️ 회피",
       "grade_color": "cold",
       "news": "비만치료제·GLP-1 성장 지속. 바이오시밀러 유럽·미국 시장 확대.",
@@ -515,36 +515,36 @@
       "etf_details": [
         {
           "ticker": "XLV",
-          "price": 149.89,
-          "change_pct": 1.17,
-          "month_change": 2.5,
-          "vol_ratio": 0.73,
-          "score": 0.378
+          "price": 148.51,
+          "change_pct": -0.92,
+          "month_change": 3.52,
+          "vol_ratio": 0.67,
+          "score": -0.296
         },
         {
           "ticker": "IBB",
-          "price": 168.79,
-          "change_pct": -0.16,
-          "month_change": -1.6,
-          "vol_ratio": 0.47,
-          "score": -2.816
+          "price": 169.42,
+          "change_pct": 0.37,
+          "month_change": 0.24,
+          "vol_ratio": 0.53,
+          "score": -1.632
         },
         {
           "ticker": "XBI",
-          "price": 131.66,
-          "change_pct": -0.84,
-          "month_change": -2.1,
-          "vol_ratio": 0.69,
-          "score": -2.434
+          "price": 133.35,
+          "change_pct": 1.28,
+          "month_change": 0.23,
+          "vol_ratio": 0.65,
+          "score": -0.783
         }
       ],
       "breakdown": {
-        "etf": -0.568,
+        "etf": -0.316,
         "sox": 0.0,
-        "dxy": -0.01,
-        "rate": -0.369,
+        "dxy": -0.006,
+        "rate": -0.112,
         "china": NaN,
-        "vix": 0.37
+        "vix": 0.022
       },
       "sensitivity": {
         "etf": 0.35,
@@ -606,7 +606,7 @@
           "reason": "신약 라이선스아웃"
         }
       ],
-      "updated_at": "2026-05-26 07:34",
+      "updated_at": "2026-05-27 07:47",
       "rank": 5
     },
     {
@@ -616,7 +616,7 @@
       "icon": "🛍️",
       "description": "경기소비재·필수소비재·리테일 섹터",
       "score": NaN,
-      "etf_score": -0.385,
+      "etf_score": -0.122,
       "grade": "❄️ 회피",
       "grade_color": "cold",
       "news": "미국 소비자 지출 견조. K-브랜드 글로벌 프리미엄화 가속.",
@@ -628,36 +628,36 @@
       "etf_details": [
         {
           "ticker": "XLY",
-          "price": 119.18,
-          "change_pct": 0.4,
-          "month_change": 1.22,
-          "vol_ratio": 0.56,
-          "score": -1.11
+          "price": 119.45,
+          "change_pct": 0.23,
+          "month_change": 1.37,
+          "vol_ratio": 0.6,
+          "score": -0.943
         },
         {
           "ticker": "XLP",
-          "price": 84.8,
-          "change_pct": 0.17,
-          "month_change": 1.58,
-          "vol_ratio": 0.62,
-          "score": -0.83
+          "price": 83.63,
+          "change_pct": -1.38,
+          "month_change": 1.57,
+          "vol_ratio": 0.78,
+          "score": -0.802
         },
         {
           "ticker": "FDIS",
-          "price": 102.47,
-          "change_pct": 0.49,
-          "month_change": 1.02,
-          "vol_ratio": 1.05,
-          "score": 0.786
+          "price": 102.93,
+          "change_pct": 0.45,
+          "month_change": 1.15,
+          "vol_ratio": 1.18,
+          "score": 1.379
         }
       ],
       "breakdown": {
-        "etf": -0.115,
+        "etf": -0.037,
         "sox": 0.0,
-        "dxy": -0.029,
-        "rate": -0.123,
+        "dxy": -0.017,
+        "rate": -0.037,
         "china": NaN,
-        "vix": 0.37
+        "vix": 0.022
       },
       "sensitivity": {
         "etf": 0.3,
@@ -719,7 +719,7 @@
           "reason": "유통 복합 포트폴리오"
         }
       ],
-      "updated_at": "2026-05-26 07:34",
+      "updated_at": "2026-05-27 07:47",
       "rank": 6
     },
     {
@@ -729,7 +729,7 @@
       "icon": "🏭",
       "description": "제조·방위산업·인프라 핵심 섹터",
       "score": NaN,
-      "etf_score": 0.168,
+      "etf_score": 3.17,
       "grade": "❄️ 회피",
       "grade_color": "cold",
       "news": "K방산 수출 사상 최대. NATO 국방비 증액에 한국 방산주 수혜.",
@@ -741,36 +741,36 @@
       "etf_details": [
         {
           "ticker": "XLI",
-          "price": 171.77,
-          "change_pct": 0.73,
-          "month_change": -1.32,
-          "vol_ratio": 0.78,
-          "score": -1.102
+          "price": 174.3,
+          "change_pct": 1.47,
+          "month_change": 1.04,
+          "vol_ratio": 0.73,
+          "score": -0.074
         },
         {
           "ticker": "ITA",
-          "price": 225.37,
-          "change_pct": 0.99,
-          "month_change": 2.86,
-          "vol_ratio": 0.58,
-          "score": -0.144
+          "price": 229.49,
+          "change_pct": 1.83,
+          "month_change": 6.23,
+          "vol_ratio": 1.48,
+          "score": 5.152
         },
         {
           "ticker": "PPA",
-          "price": 170.24,
-          "change_pct": 1.38,
-          "month_change": 0.93,
-          "vol_ratio": 1.21,
-          "score": 1.748
+          "price": 174.04,
+          "change_pct": 2.23,
+          "month_change": 4.96,
+          "vol_ratio": 1.39,
+          "score": 4.431
         }
       ],
       "breakdown": {
-        "etf": 0.05,
-        "sox": 0.366,
-        "dxy": 0.029,
-        "rate": 0.062,
+        "etf": 0.951,
+        "sox": 0.494,
+        "dxy": 0.017,
+        "rate": 0.019,
         "china": NaN,
-        "vix": -0.555
+        "vix": -0.032
       },
       "sensitivity": {
         "etf": 0.3,
@@ -832,7 +832,7 @@
           "reason": "방산 소재 조달"
         }
       ],
-      "updated_at": "2026-05-26 07:34",
+      "updated_at": "2026-05-27 07:47",
       "rank": 7
     },
     {
@@ -842,7 +842,7 @@
       "icon": "🏗️",
       "description": "리츠·데이터센터·물류인프라 섹터",
       "score": NaN,
-      "etf_score": 0.744,
+      "etf_score": 1.633,
       "grade": "❄️ 회피",
       "grade_color": "cold",
       "news": "데이터센터 리츠 급성장. AI 인프라 투자로 산업용 부동산 수요 폭발.",
@@ -854,36 +854,36 @@
       "etf_details": [
         {
           "ticker": "XLRE",
-          "price": 44.56,
-          "change_pct": 0.13,
-          "month_change": 1.36,
-          "vol_ratio": 0.86,
-          "score": 0.039
+          "price": 44.71,
+          "change_pct": 0.34,
+          "month_change": 2.81,
+          "vol_ratio": 1.02,
+          "score": 1.345
         },
         {
           "ticker": "VNQ",
-          "price": 96.77,
-          "change_pct": 0.1,
-          "month_change": 1.34,
-          "vol_ratio": 1.42,
-          "score": 2.253
+          "price": 97.22,
+          "change_pct": 0.47,
+          "month_change": 2.57,
+          "vol_ratio": 1.18,
+          "score": 1.95
         },
         {
           "ticker": "IYR",
-          "price": 102.72,
-          "change_pct": 0.16,
-          "month_change": 1.04,
-          "vol_ratio": 0.87,
-          "score": -0.06
+          "price": 103.12,
+          "change_pct": 0.39,
+          "month_change": 2.27,
+          "vol_ratio": 1.13,
+          "score": 1.604
         }
       ],
       "breakdown": {
-        "etf": 0.26,
-        "sox": -0.366,
-        "dxy": -0.019,
-        "rate": -0.431,
+        "etf": 0.572,
+        "sox": -0.494,
+        "dxy": -0.011,
+        "rate": -0.131,
         "china": NaN,
-        "vix": 0.278
+        "vix": 0.016
       },
       "sensitivity": {
         "etf": 0.35,
@@ -945,7 +945,7 @@
           "reason": "벌크·탱커 해운"
         }
       ],
-      "updated_at": "2026-05-26 07:34",
+      "updated_at": "2026-05-27 07:47",
       "rank": 8
     },
     {
@@ -955,7 +955,7 @@
       "icon": "📡",
       "description": "5G·콘텐츠·플랫폼 미디어 섹터",
       "score": NaN,
-      "etf_score": 1.785,
+      "etf_score": 0.585,
       "grade": "❄️ 회피",
       "grade_color": "cold",
       "news": "K팝·K드라마 글로벌 스트리밍 성장. 5G 킬러콘텐츠 수익화 본격화.",
@@ -967,36 +967,36 @@
       "etf_details": [
         {
           "ticker": "XLC",
-          "price": 115.46,
-          "change_pct": -0.55,
-          "month_change": -1.64,
+          "price": 115.55,
+          "change_pct": 0.08,
+          "month_change": -0.22,
           "vol_ratio": 0.81,
-          "score": -1.639
+          "score": -0.828
         },
         {
           "ticker": "IYZ",
-          "price": 44.7,
-          "change_pct": 1.15,
-          "month_change": 3.35,
-          "vol_ratio": 2.62,
-          "score": 8.282
+          "price": 44.74,
+          "change_pct": 0.09,
+          "month_change": 7.99,
+          "vol_ratio": 0.61,
+          "score": 1.677
         },
         {
           "ticker": "FCOM",
-          "price": 73.86,
-          "change_pct": -0.19,
-          "month_change": 0.03,
-          "vol_ratio": 0.69,
-          "score": -1.287
+          "price": 74.34,
+          "change_pct": 0.65,
+          "month_change": 0.43,
+          "vol_ratio": 1.12,
+          "score": 0.907
         }
       ],
       "breakdown": {
-        "etf": 0.625,
-        "sox": 0.366,
-        "dxy": -0.019,
-        "rate": -0.246,
+        "etf": 0.205,
+        "sox": 0.494,
+        "dxy": -0.011,
+        "rate": -0.075,
         "china": NaN,
-        "vix": 0.278
+        "vix": 0.016
       },
       "sensitivity": {
         "etf": 0.35,
@@ -1058,7 +1058,7 @@
           "reason": "게임·미디어 융합"
         }
       ],
-      "updated_at": "2026-05-26 07:34",
+      "updated_at": "2026-05-27 07:47",
       "rank": 9
     },
     {
@@ -1068,7 +1068,7 @@
       "icon": "🔋",
       "description": "태양광·풍력·전기차 배터리 섹터",
       "score": NaN,
-      "etf_score": 8.97,
+      "etf_score": 4.222,
       "grade": "❄️ 회피",
       "grade_color": "cold",
       "news": "IRA 보조금 효과 지속. 전고체 배터리 상용화 타임라인 가시화.",
@@ -1080,36 +1080,36 @@
       "etf_details": [
         {
           "ticker": "ICLN",
-          "price": 22.41,
-          "change_pct": 1.04,
-          "month_change": 11.27,
-          "vol_ratio": 0.83,
-          "score": 4.224
+          "price": 22.93,
+          "change_pct": 2.32,
+          "month_change": 13.63,
+          "vol_ratio": 0.66,
+          "score": 5.02
         },
         {
           "ticker": "QCLN",
-          "price": 63.4,
-          "change_pct": 2.09,
-          "month_change": 11.03,
-          "vol_ratio": 3.91,
-          "score": 16.885
+          "price": 66.45,
+          "change_pct": 4.81,
+          "month_change": 16.13,
+          "vol_ratio": 0.73,
+          "score": 7.286
         },
         {
           "ticker": "LIT",
-          "price": 85.28,
-          "change_pct": 1.07,
-          "month_change": 3.81,
-          "vol_ratio": 1.96,
-          "score": 5.802
+          "price": 86.35,
+          "change_pct": 1.25,
+          "month_change": 1.65,
+          "vol_ratio": 0.8,
+          "score": 0.361
         }
       ],
       "breakdown": {
-        "etf": 2.691,
-        "sox": 0.366,
-        "dxy": -0.038,
-        "rate": -0.246,
+        "etf": 1.267,
+        "sox": 0.494,
+        "dxy": -0.022,
+        "rate": -0.075,
         "china": NaN,
-        "vix": 0.185
+        "vix": 0.011
       },
       "sensitivity": {
         "etf": 0.3,
@@ -1171,7 +1171,7 @@
           "reason": "배터리 투자 지주"
         }
       ],
-      "updated_at": "2026-05-26 07:34",
+      "updated_at": "2026-05-27 07:47",
       "rank": 10
     }
   ]
