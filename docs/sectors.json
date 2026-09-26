@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026년 09월 25일 08:57 (KST)",
-  "generated_at_iso": "2026-09-25T08:57:02.645244+09:00",
+  "generated_at": "2026년 09월 26일 09:00 (KST)",
+  "generated_at_iso": "2026-09-26T09:00:01.071503+09:00",
   "total_sectors": 10,
   "top_sector": "기술·반도체",
-  "market_date": "2026-09-24",
+  "market_date": "2026-09-25",
   "macro_raw": {
     "sox": {
       "ticker": "^SOX",
-      "day_chg": -0.333,
-      "month_chg": 7.805,
-      "signal": 2.1751
+      "day_chg": 1.412,
+      "month_chg": 9.109,
+      "signal": 3.4387
     },
     "dxy": {
       "ticker": "DX-Y.NYB",
-      "day_chg": 0.168,
-      "month_chg": 2.293,
-      "signal": 0.772
+      "day_chg": -0.252,
+      "month_chg": 2.138,
+      "signal": 0.5156
     },
     "rate": {
       "ticker": "^TNX",
-      "day_chg": 0.939,
-      "month_chg": 9.736,
-      "signal": 3.3902
+      "day_chg": 0.426,
+      "month_chg": 11.748,
+      "signal": 3.7376
     },
     "china": {
       "ticker": "000300.SS",
@@ -31,17 +31,17 @@
     },
     "vix": {
       "ticker": "^VIX",
-      "day_chg": 3.228,
-      "month_chg": -1.136,
-      "signal": 1.064
+      "day_chg": -5.105,
+      "month_chg": -3.754,
+      "signal": -2.7929
     }
   },
   "macro": {
-    "sox": 2.1751,
-    "dxy": 0.772,
-    "rate": 3.3902,
+    "sox": 3.4387,
+    "dxy": 0.5156,
+    "rate": 3.7376,
     "china": 0.0,
-    "vix": 1.064
+    "vix": -2.7929
   },
   "sectors": [
     {
@@ -50,10 +50,10 @@
       "name_en": "Technology & Semiconductors",
       "icon": "💾",
       "description": "AI·반도체·클라우드 중심 성장 섹터",
-      "score": 0.723,
-      "etf_score": 2.389,
-      "grade": "📈 매수",
-      "grade_color": "buy",
+      "score": NaN,
+      "etf_score": NaN,
+      "grade": "❄️ 회피",
+      "grade_color": "cold",
       "news": "반도체 AI 수요 급증으로 빅테크 설비투자 확대 중. HBM 메모리 공급 부족 지속.",
       "etfs": [
         "XLK",
@@ -63,36 +63,36 @@
       "etf_details": [
         {
           "ticker": "XLK",
-          "price": 194.71,
-          "change_pct": -0.32,
-          "month_change": 7.26,
-          "vol_ratio": 0.87,
-          "score": 2.243
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.8,
+          "score": NaN
         },
         {
           "ticker": "SOXX",
-          "price": 566.07,
-          "change_pct": 0.06,
-          "month_change": 10.19,
-          "vol_ratio": 0.64,
-          "score": 2.663
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.63,
+          "score": NaN
         },
         {
           "ticker": "SMH",
-          "price": 600.52,
-          "change_pct": -0.15,
-          "month_change": 8.04,
-          "vol_ratio": 0.78,
-          "score": 2.262
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.65,
+          "score": NaN
         }
       ],
       "breakdown": {
-        "etf": 0.717,
-        "sox": 0.544,
-        "dxy": 0.077,
-        "rate": -0.509,
+        "etf": NaN,
+        "sox": 0.86,
+        "dxy": 0.052,
+        "rate": -0.561,
         "china": 0.0,
-        "vix": -0.106
+        "vix": 0.279
       },
       "sensitivity": {
         "etf": 0.3,
@@ -154,347 +154,8 @@
           "reason": "동박·반도체 소재"
         }
       ],
-      "updated_at": "2026-09-25 08:57",
+      "updated_at": "2026-09-26 09:00",
       "rank": 1
-    },
-    {
-      "id": "finance",
-      "name": "금융·은행",
-      "name_en": "Financials & Banking",
-      "icon": "🏦",
-      "description": "금리·신용·자산관리 핵심 섹터",
-      "score": 0.175,
-      "etf_score": -1.994,
-      "grade": "➡️ 중립",
-      "grade_color": "neut",
-      "news": "금리 고점 확인 후 은행주 밸류에이션 재평가. 대출 성장 회복 기대.",
-      "etfs": [
-        "XLF",
-        "KRE",
-        "KBE"
-      ],
-      "etf_details": [
-        {
-          "ticker": "XLF",
-          "price": 54.53,
-          "change_pct": -0.02,
-          "month_change": -6.15,
-          "vol_ratio": 0.64,
-          "score": -3.908
-        },
-        {
-          "ticker": "KRE",
-          "price": 70.94,
-          "change_pct": 0.8,
-          "month_change": -4.02,
-          "vol_ratio": 1.17,
-          "score": -0.61
-        },
-        {
-          "ticker": "KBE",
-          "price": 64.8,
-          "change_pct": 0.45,
-          "month_change": -4.78,
-          "vol_ratio": 1.07,
-          "score": -1.464
-        }
-      ],
-      "breakdown": {
-        "etf": -0.598,
-        "sox": -0.109,
-        "dxy": 0.077,
-        "rate": 1.017,
-        "china": 0.0,
-        "vix": -0.213
-      },
-      "sensitivity": {
-        "etf": 0.3,
-        "sox": -0.05,
-        "dxy": 0.1,
-        "rate": 0.3,
-        "china": 0.05,
-        "vix": -0.2
-      },
-      "korean_stocks": [
-        {
-          "ticker": "105560",
-          "name": "KB금융",
-          "reason": "국내 최대 금융그룹"
-        },
-        {
-          "ticker": "055550",
-          "name": "신한지주",
-          "reason": "글로벌 금융 확장"
-        },
-        {
-          "ticker": "086790",
-          "name": "하나금융지주",
-          "reason": "외환·투자 강점"
-        },
-        {
-          "ticker": "316140",
-          "name": "우리금융지주",
-          "reason": "배당·수익성 개선"
-        },
-        {
-          "ticker": "000810",
-          "name": "삼성화재",
-          "reason": "손보 1위 수익성"
-        },
-        {
-          "ticker": "032830",
-          "name": "삼성생명",
-          "reason": "생보 시장 1위"
-        },
-        {
-          "ticker": "071050",
-          "name": "한국금융지주",
-          "reason": "한투 계열 증권"
-        },
-        {
-          "ticker": "016360",
-          "name": "삼성증권",
-          "reason": "리테일 강자"
-        },
-        {
-          "ticker": "003540",
-          "name": "대신증권",
-          "reason": "증권·투자 수혜"
-        },
-        {
-          "ticker": "001270",
-          "name": "부국증권",
-          "reason": "소형 고배당 증권"
-        }
-      ],
-      "updated_at": "2026-09-25 08:57",
-      "rank": 2
-    },
-    {
-      "id": "communication",
-      "name": "통신·미디어",
-      "name_en": "Communication & Media",
-      "icon": "📡",
-      "description": "5G·콘텐츠·플랫폼 미디어 섹터",
-      "score": 0.009,
-      "etf_score": 2.329,
-      "grade": "➡️ 중립",
-      "grade_color": "neut",
-      "news": "K팝·K드라마 글로벌 스트리밍 성장. 5G 킬러콘텐츠 수익화 본격화.",
-      "etfs": [
-        "XLC",
-        "IYZ",
-        "FCOM"
-      ],
-      "etf_details": [
-        {
-          "ticker": "XLC",
-          "price": 113.99,
-          "change_pct": 1.27,
-          "month_change": 1.05,
-          "vol_ratio": 0.78,
-          "score": 0.033
-        },
-        {
-          "ticker": "IYZ",
-          "price": 41.49,
-          "change_pct": 0.36,
-          "month_change": -3.46,
-          "vol_ratio": 0.65,
-          "score": -2.621
-        },
-        {
-          "ticker": "FCOM",
-          "price": 74.07,
-          "change_pct": 1.66,
-          "month_change": 4.05,
-          "vol_ratio": 2.82,
-          "score": 9.576
-        }
-      ],
-      "breakdown": {
-        "etf": 0.815,
-        "sox": 0.109,
-        "dxy": -0.077,
-        "rate": -0.678,
-        "china": 0.0,
-        "vix": -0.16
-      },
-      "sensitivity": {
-        "etf": 0.35,
-        "sox": 0.05,
-        "dxy": -0.1,
-        "rate": -0.2,
-        "china": 0.15,
-        "vix": -0.15
-      },
-      "korean_stocks": [
-        {
-          "ticker": "017670",
-          "name": "SK텔레콤",
-          "reason": "5G·AI 통신 선도"
-        },
-        {
-          "ticker": "030200",
-          "name": "KT",
-          "reason": "B2B AI·클라우드"
-        },
-        {
-          "ticker": "032640",
-          "name": "LG유플러스",
-          "reason": "B2C 5G 서비스"
-        },
-        {
-          "ticker": "035420",
-          "name": "NAVER",
-          "reason": "콘텐츠 플랫폼 1위"
-        },
-        {
-          "ticker": "035720",
-          "name": "카카오",
-          "reason": "메신저·콘텐츠 생태계"
-        },
-        {
-          "ticker": "041510",
-          "name": "에스엠",
-          "reason": "K팝 콘텐츠 글로벌"
-        },
-        {
-          "ticker": "352820",
-          "name": "하이브",
-          "reason": "K팝 IP 플랫폼"
-        },
-        {
-          "ticker": "035900",
-          "name": "JYP Ent.",
-          "reason": "스트리밍 음원 수혜"
-        },
-        {
-          "ticker": "122870",
-          "name": "와이지엔터테인먼트",
-          "reason": "K팝 IP 확장"
-        },
-        {
-          "ticker": "259960",
-          "name": "크래프톤",
-          "reason": "게임·미디어 융합"
-        }
-      ],
-      "updated_at": "2026-09-25 08:57",
-      "rank": 3
-    },
-    {
-      "id": "industrial",
-      "name": "산업·방산",
-      "name_en": "Industrials & Defense",
-      "icon": "🏭",
-      "description": "제조·방위산업·인프라 핵심 섹터",
-      "score": -0.279,
-      "etf_score": -3.306,
-      "grade": "➡️ 중립",
-      "grade_color": "neut",
-      "news": "K방산 수출 사상 최대. NATO 국방비 증액에 한국 방산주 수혜.",
-      "etfs": [
-        "XLI",
-        "ITA",
-        "PPA"
-      ],
-      "etf_details": [
-        {
-          "ticker": "XLI",
-          "price": 168.83,
-          "change_pct": -0.75,
-          "month_change": -5.11,
-          "vol_ratio": 1.02,
-          "score": -2.271
-        },
-        {
-          "ticker": "ITA",
-          "price": 212.76,
-          "change_pct": -0.54,
-          "month_change": -9.09,
-          "vol_ratio": 0.73,
-          "score": -4.939
-        },
-        {
-          "ticker": "PPA",
-          "price": 159.09,
-          "change_pct": -0.26,
-          "month_change": -6.48,
-          "vol_ratio": 1.0,
-          "score": -2.708
-        }
-      ],
-      "breakdown": {
-        "etf": -0.992,
-        "sox": 0.109,
-        "dxy": 0.116,
-        "rate": 0.17,
-        "china": 0.0,
-        "vix": 0.319
-      },
-      "sensitivity": {
-        "etf": 0.3,
-        "sox": 0.05,
-        "dxy": 0.15,
-        "rate": 0.05,
-        "china": 0.15,
-        "vix": 0.3
-      },
-      "korean_stocks": [
-        {
-          "ticker": "012450",
-          "name": "한화에어로스페이스",
-          "reason": "K방산 수출 선도"
-        },
-        {
-          "ticker": "047810",
-          "name": "한국항공우주",
-          "reason": "FA-50 수출 급증"
-        },
-        {
-          "ticker": "064350",
-          "name": "현대로템",
-          "reason": "K2전차·수소열차"
-        },
-        {
-          "ticker": "272210",
-          "name": "한화시스템",
-          "reason": "방산전자·SAR위성"
-        },
-        {
-          "ticker": "000880",
-          "name": "한화",
-          "reason": "방산 지주 종합"
-        },
-        {
-          "ticker": "329180",
-          "name": "현대중공업",
-          "reason": "함정·잠수함 수출"
-        },
-        {
-          "ticker": "034020",
-          "name": "두산에너빌리티",
-          "reason": "원전·방산 복합"
-        },
-        {
-          "ticker": "267270",
-          "name": "HD현대중공업",
-          "reason": "해양방산 수출"
-        },
-        {
-          "ticker": "009830",
-          "name": "한화솔루션",
-          "reason": "방산화학 소재"
-        },
-        {
-          "ticker": "047050",
-          "name": "포스코인터내셔널",
-          "reason": "방산 소재 조달"
-        }
-      ],
-      "updated_at": "2026-09-25 08:57",
-      "rank": 4
     },
     {
       "id": "ai",
@@ -502,10 +163,10 @@
       "name_en": "AI & Software",
       "icon": "🤖",
       "description": "생성AI·데이터·플랫폼 고성장 섹터",
-      "score": -0.374,
-      "etf_score": 0.767,
-      "grade": "➡️ 중립",
-      "grade_color": "neut",
+      "score": NaN,
+      "etf_score": NaN,
+      "grade": "❄️ 회피",
+      "grade_color": "cold",
       "news": "생성AI 채택 가속화로 소프트웨어 기업 실적 상향. 클라우드 지출 증가세.",
       "etfs": [
         "AIQ",
@@ -515,36 +176,36 @@
       "etf_details": [
         {
           "ticker": "AIQ",
-          "price": 65.98,
-          "change_pct": -0.02,
-          "month_change": 4.6,
-          "vol_ratio": 0.73,
-          "score": 0.743
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.67,
+          "score": NaN
         },
         {
           "ticker": "BOTZ",
-          "price": 35.22,
-          "change_pct": -0.2,
-          "month_change": -1.76,
-          "vol_ratio": 0.61,
-          "score": -2.338
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.55,
+          "score": NaN
         },
         {
           "ticker": "ARKK",
-          "price": 91.7,
-          "change_pct": 2.15,
-          "month_change": 6.17,
-          "vol_ratio": 1.14,
-          "score": 3.896
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.78,
+          "score": NaN
         }
       ],
       "breakdown": {
-        "etf": 0.268,
-        "sox": 0.326,
-        "dxy": 0.039,
-        "rate": -0.848,
+        "etf": NaN,
+        "sox": 0.516,
+        "dxy": 0.026,
+        "rate": -0.934,
         "china": 0.0,
-        "vix": -0.16
+        "vix": 0.419
       },
       "sensitivity": {
         "etf": 0.35,
@@ -606,8 +267,8 @@
           "reason": "AI NPC·메타버스"
         }
       ],
-      "updated_at": "2026-09-25 08:57",
-      "rank": 5
+      "updated_at": "2026-09-26 09:00",
+      "rank": 2
     },
     {
       "id": "energy",
@@ -615,10 +276,10 @@
       "name_en": "Energy & Materials",
       "icon": "⚡",
       "description": "원유·원자력·희토류 자원 섹터",
-      "score": -1.065,
-      "etf_score": -3.246,
-      "grade": "📉 관망",
-      "grade_color": "watch",
+      "score": NaN,
+      "etf_score": NaN,
+      "grade": "❄️ 회피",
+      "grade_color": "cold",
       "news": "원유 공급 불안과 원전 르네상스로 에너지 섹터 주목. LNG 수요 증가 지속.",
       "etfs": [
         "XLE",
@@ -628,36 +289,36 @@
       "etf_details": [
         {
           "ticker": "XLE",
-          "price": 62.6,
-          "change_pct": 0.37,
-          "month_change": 1.47,
-          "vol_ratio": 1.06,
-          "score": 0.992
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 1.0,
+          "score": NaN
         },
         {
           "ticker": "XLB",
-          "price": 49.68,
-          "change_pct": -1.19,
-          "month_change": -6.85,
-          "vol_ratio": 1.22,
-          "score": -2.348
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.9,
+          "score": NaN
         },
         {
           "ticker": "URA",
-          "price": 40.86,
-          "change_pct": -2.69,
-          "month_change": -15.12,
-          "vol_ratio": 0.69,
-          "score": -8.384
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.84,
+          "score": NaN
         }
       ],
       "breakdown": {
-        "etf": -0.812,
-        "sox": -0.109,
-        "dxy": -0.154,
-        "rate": 0.17,
+        "etf": NaN,
+        "sox": -0.172,
+        "dxy": -0.103,
+        "rate": 0.187,
         "china": 0.0,
-        "vix": -0.16
+        "vix": 0.419
       },
       "sensitivity": {
         "etf": 0.25,
@@ -719,121 +380,121 @@
           "reason": "동박·에너지 소재"
         }
       ],
-      "updated_at": "2026-09-25 08:57",
-      "rank": 6
+      "updated_at": "2026-09-26 09:00",
+      "rank": 3
     },
     {
-      "id": "consumer",
-      "name": "소비재·유통",
-      "name_en": "Consumer & Retail",
-      "icon": "🛍️",
-      "description": "경기소비재·필수소비재·리테일 섹터",
-      "score": -1.597,
-      "etf_score": -3.099,
-      "grade": "📉 관망",
-      "grade_color": "watch",
-      "news": "미국 소비자 지출 견조. K-브랜드 글로벌 프리미엄화 가속.",
+      "id": "finance",
+      "name": "금융·은행",
+      "name_en": "Financials & Banking",
+      "icon": "🏦",
+      "description": "금리·신용·자산관리 핵심 섹터",
+      "score": NaN,
+      "etf_score": NaN,
+      "grade": "❄️ 회피",
+      "grade_color": "cold",
+      "news": "금리 고점 확인 후 은행주 밸류에이션 재평가. 대출 성장 회복 기대.",
       "etfs": [
-        "XLY",
-        "XLP",
-        "FDIS"
+        "XLF",
+        "KRE",
+        "KBE"
       ],
       "etf_details": [
         {
-          "ticker": "XLY",
-          "price": 110.32,
-          "change_pct": -0.3,
-          "month_change": -6.26,
-          "vol_ratio": 0.86,
-          "score": -3.202
-        },
-        {
-          "ticker": "XLP",
-          "price": 81.7,
-          "change_pct": -0.89,
-          "month_change": -4.95,
-          "vol_ratio": 1.06,
-          "score": -2.087
-        },
-        {
-          "ticker": "FDIS",
-          "price": 96.08,
-          "change_pct": -0.41,
-          "month_change": -6.44,
+          "ticker": "XLF",
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
           "vol_ratio": 0.68,
-          "score": -4.009
+          "score": NaN
+        },
+        {
+          "ticker": "KRE",
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.82,
+          "score": NaN
+        },
+        {
+          "ticker": "KBE",
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 1.0,
+          "score": NaN
         }
       ],
       "breakdown": {
-        "etf": -0.93,
-        "sox": 0.0,
-        "dxy": -0.116,
-        "rate": -0.339,
+        "etf": NaN,
+        "sox": -0.172,
+        "dxy": 0.052,
+        "rate": 1.121,
         "china": 0.0,
-        "vix": -0.213
+        "vix": 0.559
       },
       "sensitivity": {
         "etf": 0.3,
-        "sox": 0.0,
-        "dxy": -0.15,
-        "rate": -0.1,
-        "china": 0.25,
+        "sox": -0.05,
+        "dxy": 0.1,
+        "rate": 0.3,
+        "china": 0.05,
         "vix": -0.2
       },
       "korean_stocks": [
         {
-          "ticker": "005380",
-          "name": "현대차",
-          "reason": "글로벌 전기차 확장"
+          "ticker": "105560",
+          "name": "KB금융",
+          "reason": "국내 최대 금융그룹"
         },
         {
-          "ticker": "000270",
-          "name": "기아",
-          "reason": "SUV·전기차 수출"
+          "ticker": "055550",
+          "name": "신한지주",
+          "reason": "글로벌 금융 확장"
         },
         {
-          "ticker": "004170",
-          "name": "신세계",
-          "reason": "프리미엄 유통 강자"
+          "ticker": "086790",
+          "name": "하나금융지주",
+          "reason": "외환·투자 강점"
         },
         {
-          "ticker": "069960",
-          "name": "현대백화점",
-          "reason": "고급 소비 리더"
+          "ticker": "316140",
+          "name": "우리금융지주",
+          "reason": "배당·수익성 개선"
         },
         {
-          "ticker": "282330",
-          "name": "BGF리테일",
-          "reason": "편의점 1위 CU"
+          "ticker": "000810",
+          "name": "삼성화재",
+          "reason": "손보 1위 수익성"
         },
         {
-          "ticker": "139480",
-          "name": "이마트",
-          "reason": "대형마트 1위"
+          "ticker": "032830",
+          "name": "삼성생명",
+          "reason": "생보 시장 1위"
         },
         {
-          "ticker": "271560",
-          "name": "오리온",
-          "reason": "중국·동남아 확장"
+          "ticker": "071050",
+          "name": "한국금융지주",
+          "reason": "한투 계열 증권"
         },
         {
-          "ticker": "097950",
-          "name": "CJ제일제당",
-          "reason": "K-푸드 글로벌화"
+          "ticker": "016360",
+          "name": "삼성증권",
+          "reason": "리테일 강자"
         },
         {
-          "ticker": "161390",
-          "name": "한국타이어앤테크놀로지",
-          "reason": "전기차 타이어 수혜"
+          "ticker": "003540",
+          "name": "대신증권",
+          "reason": "증권·투자 수혜"
         },
         {
-          "ticker": "004990",
-          "name": "롯데지주",
-          "reason": "유통 복합 포트폴리오"
+          "ticker": "001270",
+          "name": "부국증권",
+          "reason": "소형 고배당 증권"
         }
       ],
-      "updated_at": "2026-09-25 08:57",
-      "rank": 7
+      "updated_at": "2026-09-26 09:00",
+      "rank": 4
     },
     {
       "id": "health",
@@ -841,10 +502,10 @@
       "name_en": "Healthcare & Biotech",
       "icon": "🧬",
       "description": "신약·의료기기·바이오시밀러 성장 섹터",
-      "score": -1.658,
-      "etf_score": -1.113,
-      "grade": "📉 관망",
-      "grade_color": "watch",
+      "score": NaN,
+      "etf_score": NaN,
+      "grade": "❄️ 회피",
+      "grade_color": "cold",
       "news": "비만치료제·GLP-1 성장 지속. 바이오시밀러 유럽·미국 시장 확대.",
       "etfs": [
         "XLV",
@@ -854,36 +515,36 @@
       "etf_details": [
         {
           "ticker": "XLV",
-          "price": 169.87,
-          "change_pct": 0.63,
-          "month_change": -2.72,
-          "vol_ratio": 1.0,
-          "score": -0.855
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.77,
+          "score": NaN
         },
         {
           "ticker": "IBB",
-          "price": 209.25,
-          "change_pct": 1.28,
-          "month_change": -3.3,
-          "vol_ratio": 0.97,
-          "score": -0.94
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.76,
+          "score": NaN
         },
         {
           "ticker": "XBI",
-          "price": 156.05,
-          "change_pct": 0.55,
-          "month_change": -7.72,
-          "vol_ratio": 1.33,
-          "score": -1.545
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.72,
+          "score": NaN
         }
       ],
       "breakdown": {
-        "etf": -0.39,
+        "etf": NaN,
         "sox": 0.0,
-        "dxy": -0.039,
-        "rate": -1.017,
+        "dxy": -0.026,
+        "rate": -1.121,
         "china": 0.0,
-        "vix": -0.213
+        "vix": 0.559
       },
       "sensitivity": {
         "etf": 0.35,
@@ -945,121 +606,234 @@
           "reason": "신약 라이선스아웃"
         }
       ],
-      "updated_at": "2026-09-25 08:57",
-      "rank": 8
+      "updated_at": "2026-09-26 09:00",
+      "rank": 5
     },
     {
-      "id": "cleanenergy",
-      "name": "클린에너지·배터리",
-      "name_en": "Clean Energy & Batteries",
-      "icon": "🔋",
-      "description": "태양광·풍력·전기차 배터리 섹터",
-      "score": -1.811,
-      "etf_score": -3.27,
-      "grade": "📉 관망",
-      "grade_color": "watch",
-      "news": "IRA 보조금 효과 지속. 전고체 배터리 상용화 타임라인 가시화.",
+      "id": "consumer",
+      "name": "소비재·유통",
+      "name_en": "Consumer & Retail",
+      "icon": "🛍️",
+      "description": "경기소비재·필수소비재·리테일 섹터",
+      "score": NaN,
+      "etf_score": NaN,
+      "grade": "❄️ 회피",
+      "grade_color": "cold",
+      "news": "미국 소비자 지출 견조. K-브랜드 글로벌 프리미엄화 가속.",
       "etfs": [
-        "ICLN",
-        "QCLN",
-        "LIT"
+        "XLY",
+        "XLP",
+        "FDIS"
       ],
       "etf_details": [
         {
-          "ticker": "ICLN",
-          "price": 16.97,
-          "change_pct": -2.58,
-          "month_change": -3.85,
-          "vol_ratio": 0.93,
-          "score": -2.866
-        },
-        {
-          "ticker": "QCLN",
-          "price": 48.24,
-          "change_pct": -2.03,
-          "month_change": -3.37,
+          "ticker": "XLY",
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
           "vol_ratio": 0.99,
-          "score": -2.214
+          "score": NaN
         },
         {
-          "ticker": "LIT",
-          "price": 68.82,
-          "change_pct": -1.09,
-          "month_change": -10.14,
-          "vol_ratio": 0.94,
-          "score": -4.73
+          "ticker": "XLP",
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.85,
+          "score": NaN
+        },
+        {
+          "ticker": "FDIS",
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 2.77,
+          "score": NaN
         }
       ],
       "breakdown": {
-        "etf": -0.981,
-        "sox": 0.109,
-        "dxy": -0.154,
-        "rate": -0.678,
+        "etf": NaN,
+        "sox": 0.0,
+        "dxy": -0.077,
+        "rate": -0.374,
         "china": 0.0,
-        "vix": -0.106
+        "vix": 0.559
+      },
+      "sensitivity": {
+        "etf": 0.3,
+        "sox": 0.0,
+        "dxy": -0.15,
+        "rate": -0.1,
+        "china": 0.25,
+        "vix": -0.2
+      },
+      "korean_stocks": [
+        {
+          "ticker": "005380",
+          "name": "현대차",
+          "reason": "글로벌 전기차 확장"
+        },
+        {
+          "ticker": "000270",
+          "name": "기아",
+          "reason": "SUV·전기차 수출"
+        },
+        {
+          "ticker": "004170",
+          "name": "신세계",
+          "reason": "프리미엄 유통 강자"
+        },
+        {
+          "ticker": "069960",
+          "name": "현대백화점",
+          "reason": "고급 소비 리더"
+        },
+        {
+          "ticker": "282330",
+          "name": "BGF리테일",
+          "reason": "편의점 1위 CU"
+        },
+        {
+          "ticker": "139480",
+          "name": "이마트",
+          "reason": "대형마트 1위"
+        },
+        {
+          "ticker": "271560",
+          "name": "오리온",
+          "reason": "중국·동남아 확장"
+        },
+        {
+          "ticker": "097950",
+          "name": "CJ제일제당",
+          "reason": "K-푸드 글로벌화"
+        },
+        {
+          "ticker": "161390",
+          "name": "한국타이어앤테크놀로지",
+          "reason": "전기차 타이어 수혜"
+        },
+        {
+          "ticker": "004990",
+          "name": "롯데지주",
+          "reason": "유통 복합 포트폴리오"
+        }
+      ],
+      "updated_at": "2026-09-26 09:00",
+      "rank": 6
+    },
+    {
+      "id": "industrial",
+      "name": "산업·방산",
+      "name_en": "Industrials & Defense",
+      "icon": "🏭",
+      "description": "제조·방위산업·인프라 핵심 섹터",
+      "score": NaN,
+      "etf_score": NaN,
+      "grade": "❄️ 회피",
+      "grade_color": "cold",
+      "news": "K방산 수출 사상 최대. NATO 국방비 증액에 한국 방산주 수혜.",
+      "etfs": [
+        "XLI",
+        "ITA",
+        "PPA"
+      ],
+      "etf_details": [
+        {
+          "ticker": "XLI",
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.9,
+          "score": NaN
+        },
+        {
+          "ticker": "ITA",
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.71,
+          "score": NaN
+        },
+        {
+          "ticker": "PPA",
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.96,
+          "score": NaN
+        }
+      ],
+      "breakdown": {
+        "etf": NaN,
+        "sox": 0.172,
+        "dxy": 0.077,
+        "rate": 0.187,
+        "china": 0.0,
+        "vix": -0.838
       },
       "sensitivity": {
         "etf": 0.3,
         "sox": 0.05,
-        "dxy": -0.2,
-        "rate": -0.2,
-        "china": 0.25,
-        "vix": -0.1
+        "dxy": 0.15,
+        "rate": 0.05,
+        "china": 0.15,
+        "vix": 0.3
       },
       "korean_stocks": [
         {
-          "ticker": "373220",
-          "name": "LG에너지솔루션",
-          "reason": "배터리 글로벌 2위"
+          "ticker": "012450",
+          "name": "한화에어로스페이스",
+          "reason": "K방산 수출 선도"
         },
         {
-          "ticker": "006400",
-          "name": "삼성SDI",
-          "reason": "전고체 배터리 선도"
+          "ticker": "047810",
+          "name": "한국항공우주",
+          "reason": "FA-50 수출 급증"
         },
         {
-          "ticker": "051910",
-          "name": "LG화학",
-          "reason": "배터리 소재 수직계열"
+          "ticker": "064350",
+          "name": "현대로템",
+          "reason": "K2전차·수소열차"
         },
         {
-          "ticker": "086520",
-          "name": "에코프로",
-          "reason": "양극재 국내 1위"
+          "ticker": "272210",
+          "name": "한화시스템",
+          "reason": "방산전자·SAR위성"
         },
         {
-          "ticker": "247540",
-          "name": "에코프로비엠",
-          "reason": "고성능 양극재"
+          "ticker": "000880",
+          "name": "한화",
+          "reason": "방산 지주 종합"
+        },
+        {
+          "ticker": "329180",
+          "name": "현대중공업",
+          "reason": "함정·잠수함 수출"
+        },
+        {
+          "ticker": "034020",
+          "name": "두산에너빌리티",
+          "reason": "원전·방산 복합"
+        },
+        {
+          "ticker": "267270",
+          "name": "HD현대중공업",
+          "reason": "해양방산 수출"
         },
         {
           "ticker": "009830",
           "name": "한화솔루션",
-          "reason": "태양광 모듈 수출"
+          "reason": "방산화학 소재"
         },
         {
-          "ticker": "011790",
-          "name": "SKC",
-          "reason": "동박·배터리 소재"
-        },
-        {
-          "ticker": "003670",
-          "name": "포스코퓨처엠",
-          "reason": "음극재·양극재 종합"
-        },
-        {
-          "ticker": "278280",
-          "name": "천보",
-          "reason": "전해질 리튬염 독점"
-        },
-        {
-          "ticker": "402340",
-          "name": "SK스퀘어",
-          "reason": "배터리 투자 지주"
+          "ticker": "047050",
+          "name": "포스코인터내셔널",
+          "reason": "방산 소재 조달"
         }
       ],
-      "updated_at": "2026-09-25 08:57",
-      "rank": 9
+      "updated_at": "2026-09-26 09:00",
+      "rank": 7
     },
     {
       "id": "realestate",
@@ -1067,8 +841,8 @@
       "name_en": "Real Estate & Infrastructure",
       "icon": "🏗️",
       "description": "리츠·데이터센터·물류인프라 섹터",
-      "score": -2.312,
-      "etf_score": -2.228,
+      "score": NaN,
+      "etf_score": NaN,
       "grade": "❄️ 회피",
       "grade_color": "cold",
       "news": "데이터센터 리츠 급성장. AI 인프라 투자로 산업용 부동산 수요 폭발.",
@@ -1080,36 +854,36 @@
       "etf_details": [
         {
           "ticker": "XLRE",
-          "price": 41.65,
-          "change_pct": -0.45,
-          "month_change": -7.41,
-          "vol_ratio": 0.93,
-          "score": -3.413
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 1.02,
+          "score": NaN
         },
         {
           "ticker": "VNQ",
-          "price": 91.17,
-          "change_pct": -0.31,
-          "month_change": -8.14,
-          "vol_ratio": 1.46,
-          "score": -1.527
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 1.43,
+          "score": NaN
         },
         {
           "ticker": "IYR",
-          "price": 96.81,
-          "change_pct": -0.44,
-          "month_change": -7.52,
-          "vol_ratio": 1.36,
-          "score": -1.745
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 1.32,
+          "score": NaN
         }
       ],
       "breakdown": {
-        "etf": -0.78,
-        "sox": -0.109,
-        "dxy": -0.077,
-        "rate": -1.187,
+        "etf": NaN,
+        "sox": -0.172,
+        "dxy": -0.052,
+        "rate": -1.308,
         "china": 0.0,
-        "vix": -0.16
+        "vix": 0.419
       },
       "sensitivity": {
         "etf": 0.35,
@@ -1171,7 +945,233 @@
           "reason": "벌크·탱커 해운"
         }
       ],
-      "updated_at": "2026-09-25 08:57",
+      "updated_at": "2026-09-26 09:00",
+      "rank": 8
+    },
+    {
+      "id": "communication",
+      "name": "통신·미디어",
+      "name_en": "Communication & Media",
+      "icon": "📡",
+      "description": "5G·콘텐츠·플랫폼 미디어 섹터",
+      "score": NaN,
+      "etf_score": NaN,
+      "grade": "❄️ 회피",
+      "grade_color": "cold",
+      "news": "K팝·K드라마 글로벌 스트리밍 성장. 5G 킬러콘텐츠 수익화 본격화.",
+      "etfs": [
+        "XLC",
+        "IYZ",
+        "FCOM"
+      ],
+      "etf_details": [
+        {
+          "ticker": "XLC",
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.74,
+          "score": NaN
+        },
+        {
+          "ticker": "IYZ",
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.6,
+          "score": NaN
+        },
+        {
+          "ticker": "FCOM",
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 1.31,
+          "score": NaN
+        }
+      ],
+      "breakdown": {
+        "etf": NaN,
+        "sox": 0.172,
+        "dxy": -0.052,
+        "rate": -0.748,
+        "china": 0.0,
+        "vix": 0.419
+      },
+      "sensitivity": {
+        "etf": 0.35,
+        "sox": 0.05,
+        "dxy": -0.1,
+        "rate": -0.2,
+        "china": 0.15,
+        "vix": -0.15
+      },
+      "korean_stocks": [
+        {
+          "ticker": "017670",
+          "name": "SK텔레콤",
+          "reason": "5G·AI 통신 선도"
+        },
+        {
+          "ticker": "030200",
+          "name": "KT",
+          "reason": "B2B AI·클라우드"
+        },
+        {
+          "ticker": "032640",
+          "name": "LG유플러스",
+          "reason": "B2C 5G 서비스"
+        },
+        {
+          "ticker": "035420",
+          "name": "NAVER",
+          "reason": "콘텐츠 플랫폼 1위"
+        },
+        {
+          "ticker": "035720",
+          "name": "카카오",
+          "reason": "메신저·콘텐츠 생태계"
+        },
+        {
+          "ticker": "041510",
+          "name": "에스엠",
+          "reason": "K팝 콘텐츠 글로벌"
+        },
+        {
+          "ticker": "352820",
+          "name": "하이브",
+          "reason": "K팝 IP 플랫폼"
+        },
+        {
+          "ticker": "035900",
+          "name": "JYP Ent.",
+          "reason": "스트리밍 음원 수혜"
+        },
+        {
+          "ticker": "122870",
+          "name": "와이지엔터테인먼트",
+          "reason": "K팝 IP 확장"
+        },
+        {
+          "ticker": "259960",
+          "name": "크래프톤",
+          "reason": "게임·미디어 융합"
+        }
+      ],
+      "updated_at": "2026-09-26 09:00",
+      "rank": 9
+    },
+    {
+      "id": "cleanenergy",
+      "name": "클린에너지·배터리",
+      "name_en": "Clean Energy & Batteries",
+      "icon": "🔋",
+      "description": "태양광·풍력·전기차 배터리 섹터",
+      "score": NaN,
+      "etf_score": NaN,
+      "grade": "❄️ 회피",
+      "grade_color": "cold",
+      "news": "IRA 보조금 효과 지속. 전고체 배터리 상용화 타임라인 가시화.",
+      "etfs": [
+        "ICLN",
+        "QCLN",
+        "LIT"
+      ],
+      "etf_details": [
+        {
+          "ticker": "ICLN",
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 1.07,
+          "score": NaN
+        },
+        {
+          "ticker": "QCLN",
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.76,
+          "score": NaN
+        },
+        {
+          "ticker": "LIT",
+          "price": NaN,
+          "change_pct": NaN,
+          "month_change": NaN,
+          "vol_ratio": 0.85,
+          "score": NaN
+        }
+      ],
+      "breakdown": {
+        "etf": NaN,
+        "sox": 0.172,
+        "dxy": -0.103,
+        "rate": -0.748,
+        "china": 0.0,
+        "vix": 0.279
+      },
+      "sensitivity": {
+        "etf": 0.3,
+        "sox": 0.05,
+        "dxy": -0.2,
+        "rate": -0.2,
+        "china": 0.25,
+        "vix": -0.1
+      },
+      "korean_stocks": [
+        {
+          "ticker": "373220",
+          "name": "LG에너지솔루션",
+          "reason": "배터리 글로벌 2위"
+        },
+        {
+          "ticker": "006400",
+          "name": "삼성SDI",
+          "reason": "전고체 배터리 선도"
+        },
+        {
+          "ticker": "051910",
+          "name": "LG화학",
+          "reason": "배터리 소재 수직계열"
+        },
+        {
+          "ticker": "086520",
+          "name": "에코프로",
+          "reason": "양극재 국내 1위"
+        },
+        {
+          "ticker": "247540",
+          "name": "에코프로비엠",
+          "reason": "고성능 양극재"
+        },
+        {
+          "ticker": "009830",
+          "name": "한화솔루션",
+          "reason": "태양광 모듈 수출"
+        },
+        {
+          "ticker": "011790",
+          "name": "SKC",
+          "reason": "동박·배터리 소재"
+        },
+        {
+          "ticker": "003670",
+          "name": "포스코퓨처엠",
+          "reason": "음극재·양극재 종합"
+        },
+        {
+          "ticker": "278280",
+          "name": "천보",
+          "reason": "전해질 리튬염 독점"
+        },
+        {
+          "ticker": "402340",
+          "name": "SK스퀘어",
+          "reason": "배터리 투자 지주"
+        }
+      ],
+      "updated_at": "2026-09-26 09:00",
       "rank": 10
     }
   ]
