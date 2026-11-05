@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026년 11월 04일 10:33 (KST)",
-  "generated_at_iso": "2026-11-04T10:33:22.374486+09:00",
+  "generated_at": "2026년 11월 05일 10:36 (KST)",
+  "generated_at_iso": "2026-11-05T10:36:36.663124+09:00",
   "total_sectors": 10,
   "top_sector": "기술·반도체",
-  "market_date": "2026-11-03",
+  "market_date": "2026-11-04",
   "macro_raw": {
     "sox": {
       "ticker": "^SOX",
-      "day_chg": 2.634,
-      "month_chg": -19.528,
-      "signal": -4.5412
+      "day_chg": -3.13,
+      "month_chg": -22.046,
+      "signal": -8.1786
     },
     "dxy": {
       "ticker": "DX-Y.NYB",
-      "day_chg": -0.306,
-      "month_chg": -0.715,
-      "signal": -0.3675
+      "day_chg": -0.525,
+      "month_chg": -0.817,
+      "signal": -0.5078
     },
     "rate": {
       "ticker": "^TNX",
-      "day_chg": 1.185,
-      "month_chg": -6.76,
-      "signal": -1.4353
+      "day_chg": -1.171,
+      "month_chg": -7.852,
+      "signal": -2.9411
     },
     "china": {
       "ticker": "000300.SS",
@@ -31,17 +31,17 @@
     },
     "vix": {
       "ticker": "^VIX",
-      "day_chg": -1.513,
-      "month_chg": 34.214,
-      "signal": 6.2376
+      "day_chg": -20.259,
+      "month_chg": 7.023,
+      "signal": -6.6991
     }
   },
   "macro": {
-    "sox": -4.5412,
-    "dxy": -0.3675,
-    "rate": -1.4353,
+    "sox": -8.1786,
+    "dxy": -0.5078,
+    "rate": -2.9411,
     "china": 0.0,
-    "vix": 6.2376
+    "vix": -6.6991
   },
   "sectors": [
     {
@@ -66,7 +66,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.87,
+          "vol_ratio": 0.96,
           "score": NaN
         },
         {
@@ -74,7 +74,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 1.17,
+          "vol_ratio": 1.36,
           "score": NaN
         },
         {
@@ -82,17 +82,17 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.9,
+          "vol_ratio": 1.26,
           "score": NaN
         }
       ],
       "breakdown": {
         "etf": NaN,
-        "sox": -1.135,
-        "dxy": -0.037,
-        "rate": 0.215,
+        "sox": -2.045,
+        "dxy": -0.051,
+        "rate": 0.441,
         "china": 0.0,
-        "vix": -0.624
+        "vix": 0.67
       },
       "sensitivity": {
         "etf": 0.3,
@@ -154,7 +154,7 @@
           "reason": "동박·반도체 소재"
         }
       ],
-      "updated_at": "2026-11-04 10:33",
+      "updated_at": "2026-11-05 10:36",
       "rank": 1
     },
     {
@@ -179,7 +179,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.65,
+          "vol_ratio": 1.01,
           "score": NaN
         },
         {
@@ -187,7 +187,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.68,
+          "vol_ratio": 1.05,
           "score": NaN
         },
         {
@@ -195,17 +195,17 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 1.07,
+          "vol_ratio": 1.12,
           "score": NaN
         }
       ],
       "breakdown": {
         "etf": NaN,
-        "sox": -0.681,
-        "dxy": -0.018,
-        "rate": 0.359,
+        "sox": -1.227,
+        "dxy": -0.025,
+        "rate": 0.735,
         "china": 0.0,
-        "vix": -0.936
+        "vix": 1.005
       },
       "sensitivity": {
         "etf": 0.35,
@@ -267,7 +267,7 @@
           "reason": "AI NPC·메타버스"
         }
       ],
-      "updated_at": "2026-11-04 10:33",
+      "updated_at": "2026-11-05 10:36",
       "rank": 2
     },
     {
@@ -292,7 +292,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.9,
+          "vol_ratio": 2.0,
           "score": NaN
         },
         {
@@ -300,7 +300,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 1.02,
+          "vol_ratio": 1.47,
           "score": NaN
         },
         {
@@ -308,17 +308,17 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.66,
+          "vol_ratio": 1.26,
           "score": NaN
         }
       ],
       "breakdown": {
         "etf": NaN,
-        "sox": 0.227,
-        "dxy": 0.074,
-        "rate": -0.072,
+        "sox": 0.409,
+        "dxy": 0.102,
+        "rate": -0.147,
         "china": 0.0,
-        "vix": -0.936
+        "vix": 1.005
       },
       "sensitivity": {
         "etf": 0.25,
@@ -380,7 +380,7 @@
           "reason": "동박·에너지 소재"
         }
       ],
-      "updated_at": "2026-11-04 10:33",
+      "updated_at": "2026-11-05 10:36",
       "rank": 3
     },
     {
@@ -405,7 +405,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.89,
+          "vol_ratio": 1.46,
           "score": NaN
         },
         {
@@ -413,7 +413,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.82,
+          "vol_ratio": 1.2,
           "score": NaN
         },
         {
@@ -421,17 +421,17 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.66,
+          "vol_ratio": 1.15,
           "score": NaN
         }
       ],
       "breakdown": {
         "etf": NaN,
-        "sox": 0.227,
-        "dxy": -0.037,
-        "rate": -0.431,
+        "sox": 0.409,
+        "dxy": -0.051,
+        "rate": -0.882,
         "china": 0.0,
-        "vix": -1.248
+        "vix": 1.34
       },
       "sensitivity": {
         "etf": 0.3,
@@ -493,7 +493,7 @@
           "reason": "소형 고배당 증권"
         }
       ],
-      "updated_at": "2026-11-04 10:33",
+      "updated_at": "2026-11-05 10:36",
       "rank": 4
     },
     {
@@ -518,7 +518,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.8,
+          "vol_ratio": 1.13,
           "score": NaN
         },
         {
@@ -526,7 +526,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.64,
+          "vol_ratio": 0.87,
           "score": NaN
         },
         {
@@ -534,17 +534,17 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.69,
+          "vol_ratio": 1.42,
           "score": NaN
         }
       ],
       "breakdown": {
         "etf": NaN,
         "sox": -0.0,
-        "dxy": 0.018,
-        "rate": 0.431,
+        "dxy": 0.025,
+        "rate": 0.882,
         "china": 0.0,
-        "vix": -1.248
+        "vix": 1.34
       },
       "sensitivity": {
         "etf": 0.35,
@@ -606,7 +606,7 @@
           "reason": "신약 라이선스아웃"
         }
       ],
-      "updated_at": "2026-11-04 10:33",
+      "updated_at": "2026-11-05 10:36",
       "rank": 5
     },
     {
@@ -631,7 +631,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 1.18,
+          "vol_ratio": 1.89,
           "score": NaN
         },
         {
@@ -639,7 +639,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 1.1,
+          "vol_ratio": 1.05,
           "score": NaN
         },
         {
@@ -647,17 +647,17 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.6,
+          "vol_ratio": 0.89,
           "score": NaN
         }
       ],
       "breakdown": {
         "etf": NaN,
         "sox": -0.0,
-        "dxy": 0.055,
-        "rate": 0.144,
+        "dxy": 0.076,
+        "rate": 0.294,
         "china": 0.0,
-        "vix": -1.248
+        "vix": 1.34
       },
       "sensitivity": {
         "etf": 0.3,
@@ -719,7 +719,7 @@
           "reason": "유통 복합 포트폴리오"
         }
       ],
-      "updated_at": "2026-11-04 10:33",
+      "updated_at": "2026-11-05 10:36",
       "rank": 6
     },
     {
@@ -744,7 +744,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 1.09,
+          "vol_ratio": 1.3,
           "score": NaN
         },
         {
@@ -752,7 +752,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 1.21,
+          "vol_ratio": 1.05,
           "score": NaN
         },
         {
@@ -760,17 +760,17 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.83,
+          "vol_ratio": 1.49,
           "score": NaN
         }
       ],
       "breakdown": {
         "etf": NaN,
-        "sox": -0.227,
-        "dxy": -0.055,
-        "rate": -0.072,
+        "sox": -0.409,
+        "dxy": -0.076,
+        "rate": -0.147,
         "china": 0.0,
-        "vix": 1.871
+        "vix": -2.01
       },
       "sensitivity": {
         "etf": 0.3,
@@ -832,7 +832,7 @@
           "reason": "방산 소재 조달"
         }
       ],
-      "updated_at": "2026-11-04 10:33",
+      "updated_at": "2026-11-05 10:36",
       "rank": 7
     },
     {
@@ -857,7 +857,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.87,
+          "vol_ratio": 1.13,
           "score": NaN
         },
         {
@@ -865,7 +865,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.96,
+          "vol_ratio": 0.97,
           "score": NaN
         },
         {
@@ -873,17 +873,17 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.84,
+          "vol_ratio": 1.32,
           "score": NaN
         }
       ],
       "breakdown": {
         "etf": NaN,
-        "sox": 0.227,
-        "dxy": 0.037,
-        "rate": 0.502,
+        "sox": 0.409,
+        "dxy": 0.051,
+        "rate": 1.029,
         "china": 0.0,
-        "vix": -0.936
+        "vix": 1.005
       },
       "sensitivity": {
         "etf": 0.35,
@@ -945,7 +945,7 @@
           "reason": "벌크·탱커 해운"
         }
       ],
-      "updated_at": "2026-11-04 10:33",
+      "updated_at": "2026-11-05 10:36",
       "rank": 8
     },
     {
@@ -970,7 +970,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 1.48,
+          "vol_ratio": 1.13,
           "score": NaN
         },
         {
@@ -978,7 +978,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 0.4,
+          "vol_ratio": 1.06,
           "score": NaN
         },
         {
@@ -986,17 +986,17 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 1.45,
+          "vol_ratio": 1.14,
           "score": NaN
         }
       ],
       "breakdown": {
         "etf": NaN,
-        "sox": -0.227,
-        "dxy": 0.037,
-        "rate": 0.287,
+        "sox": -0.409,
+        "dxy": 0.051,
+        "rate": 0.588,
         "china": 0.0,
-        "vix": -0.936
+        "vix": 1.005
       },
       "sensitivity": {
         "etf": 0.35,
@@ -1058,7 +1058,7 @@
           "reason": "게임·미디어 융합"
         }
       ],
-      "updated_at": "2026-11-04 10:33",
+      "updated_at": "2026-11-05 10:36",
       "rank": 9
     },
     {
@@ -1083,7 +1083,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 1.29,
+          "vol_ratio": 1.84,
           "score": NaN
         },
         {
@@ -1091,7 +1091,7 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 4.95,
+          "vol_ratio": 1.42,
           "score": NaN
         },
         {
@@ -1099,17 +1099,17 @@
           "price": NaN,
           "change_pct": NaN,
           "month_change": NaN,
-          "vol_ratio": 1.33,
+          "vol_ratio": 1.34,
           "score": NaN
         }
       ],
       "breakdown": {
         "etf": NaN,
-        "sox": -0.227,
-        "dxy": 0.074,
-        "rate": 0.287,
+        "sox": -0.409,
+        "dxy": 0.102,
+        "rate": 0.588,
         "china": 0.0,
-        "vix": -0.624
+        "vix": 0.67
       },
       "sensitivity": {
         "etf": 0.3,
@@ -1171,7 +1171,7 @@
           "reason": "배터리 투자 지주"
         }
       ],
-      "updated_at": "2026-11-04 10:33",
+      "updated_at": "2026-11-05 10:36",
       "rank": 10
     }
   ]
